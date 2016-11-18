@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AVCodec` struct in crate `ffmpeg_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AVCodec">
+
+    <title>ffmpeg_sys::AVCodec - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>ffmpeg_sys</a></p><script>window.sidebarCurrent = {name: 'AVCodec', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>ffmpeg_sys</a>::<wbr><a class='struct' href=''>AVCodec</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-2597' class='srclink' href='../src/ffmpeg_sys/avcodec/codec.rs.html#1174-1202' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct AVCodec {
+    pub name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>,
+    pub long_name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>,
+    pub kind: <a class='enum' href='../ffmpeg_sys/enum.AVMediaType.html' title='ffmpeg_sys::AVMediaType'>AVMediaType</a>,
+    pub id: <a class='enum' href='../ffmpeg_sys/enum.AVCodecID.html' title='ffmpeg_sys::AVCodecID'>AVCodecID</a>,
+    pub capabilities: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub supported_framerates: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVRational.html' title='ffmpeg_sys::AVRational'>AVRational</a>,
+    pub pix_fmts: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../ffmpeg_sys/enum.AVPixelFormat.html' title='ffmpeg_sys::AVPixelFormat'>AVPixelFormat</a>,
+    pub supported_samplerates: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub sample_fmts: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../ffmpeg_sys/enum.AVSampleFormat.html' title='ffmpeg_sys::AVSampleFormat'>AVSampleFormat</a>,
+    pub channel_layouts: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../libc/type.uint64_t.html' title='libc::uint64_t'>uint64_t</a>,
+    pub priv_class: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVClass.html' title='ffmpeg_sys::AVClass'>AVClass</a>,
+    pub max_lowres: <a class='type' href='../libc/type.uint8_t.html' title='libc::uint8_t'>uint8_t</a>,
+    pub profiles: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVProfile.html' title='ffmpeg_sys::AVProfile'>AVProfile</a>,
+    pub priv_data_size: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub next: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodec.html' title='ffmpeg_sys::AVCodec'>AVCodec</a>,
+    pub init_thread_copy: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>&gt;,
+    pub update_thread_context: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub defaults: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../ffmpeg_sys/type.AVCodecDefault.html' title='ffmpeg_sys::AVCodecDefault'>AVCodecDefault</a>,
+    pub init_static_data: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodec.html' title='ffmpeg_sys::AVCodec'>AVCodec</a>),
+    pub init: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub encode_sub: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/type.uint8_t.html' title='libc::uint8_t'>uint8_t</a>, <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVSubtitle.html' title='ffmpeg_sys::AVSubtitle'>AVSubtitle</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub encode2: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVPacket.html' title='ffmpeg_sys::AVPacket'>AVPacket</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVFrame.html' title='ffmpeg_sys::AVFrame'>AVFrame</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub decode: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVPacket.html' title='ffmpeg_sys::AVPacket'>AVPacket</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub close: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub flush: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>),
+    pub caps_internal: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+}</pre><h2 class='fields'>Fields</h2><span id='structfield.name' class='structfield'>
+                           <span id='name.v' class='invisible'>
+                           <code>name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.long_name' class='structfield'>
+                           <span id='long_name.v' class='invisible'>
+                           <code>long_name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.kind' class='structfield'>
+                           <span id='kind.v' class='invisible'>
+                           <code>kind: <a class='enum' href='../ffmpeg_sys/enum.AVMediaType.html' title='ffmpeg_sys::AVMediaType'>AVMediaType</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.id' class='structfield'>
+                           <span id='id.v' class='invisible'>
+                           <code>id: <a class='enum' href='../ffmpeg_sys/enum.AVCodecID.html' title='ffmpeg_sys::AVCodecID'>AVCodecID</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.capabilities' class='structfield'>
+                           <span id='capabilities.v' class='invisible'>
+                           <code>capabilities: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.supported_framerates' class='structfield'>
+                           <span id='supported_framerates.v' class='invisible'>
+                           <code>supported_framerates: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVRational.html' title='ffmpeg_sys::AVRational'>AVRational</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.pix_fmts' class='structfield'>
+                           <span id='pix_fmts.v' class='invisible'>
+                           <code>pix_fmts: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../ffmpeg_sys/enum.AVPixelFormat.html' title='ffmpeg_sys::AVPixelFormat'>AVPixelFormat</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.supported_samplerates' class='structfield'>
+                           <span id='supported_samplerates.v' class='invisible'>
+                           <code>supported_samplerates: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.sample_fmts' class='structfield'>
+                           <span id='sample_fmts.v' class='invisible'>
+                           <code>sample_fmts: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../ffmpeg_sys/enum.AVSampleFormat.html' title='ffmpeg_sys::AVSampleFormat'>AVSampleFormat</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.channel_layouts' class='structfield'>
+                           <span id='channel_layouts.v' class='invisible'>
+                           <code>channel_layouts: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../libc/type.uint64_t.html' title='libc::uint64_t'>uint64_t</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.priv_class' class='structfield'>
+                           <span id='priv_class.v' class='invisible'>
+                           <code>priv_class: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVClass.html' title='ffmpeg_sys::AVClass'>AVClass</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.max_lowres' class='structfield'>
+                           <span id='max_lowres.v' class='invisible'>
+                           <code>max_lowres: <a class='type' href='../libc/type.uint8_t.html' title='libc::uint8_t'>uint8_t</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.profiles' class='structfield'>
+                           <span id='profiles.v' class='invisible'>
+                           <code>profiles: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVProfile.html' title='ffmpeg_sys::AVProfile'>AVProfile</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.priv_data_size' class='structfield'>
+                           <span id='priv_data_size.v' class='invisible'>
+                           <code>priv_data_size: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.next' class='structfield'>
+                           <span id='next.v' class='invisible'>
+                           <code>next: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodec.html' title='ffmpeg_sys::AVCodec'>AVCodec</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.init_thread_copy' class='structfield'>
+                           <span id='init_thread_copy.v' class='invisible'>
+                           <code>init_thread_copy: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>&gt;</code>
+                           </span></span><span class='stab '></span><span id='structfield.update_thread_context' class='structfield'>
+                           <span id='update_thread_context.v' class='invisible'>
+                           <code>update_thread_context: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.defaults' class='structfield'>
+                           <span id='defaults.v' class='invisible'>
+                           <code>defaults: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../ffmpeg_sys/type.AVCodecDefault.html' title='ffmpeg_sys::AVCodecDefault'>AVCodecDefault</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.init_static_data' class='structfield'>
+                           <span id='init_static_data.v' class='invisible'>
+                           <code>init_static_data: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodec.html' title='ffmpeg_sys::AVCodec'>AVCodec</a>)</code>
+                           </span></span><span class='stab '></span><span id='structfield.init' class='structfield'>
+                           <span id='init.v' class='invisible'>
+                           <code>init: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.encode_sub' class='structfield'>
+                           <span id='encode_sub.v' class='invisible'>
+                           <code>encode_sub: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/type.uint8_t.html' title='libc::uint8_t'>uint8_t</a>, <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVSubtitle.html' title='ffmpeg_sys::AVSubtitle'>AVSubtitle</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.encode2' class='structfield'>
+                           <span id='encode2.v' class='invisible'>
+                           <code>encode2: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVPacket.html' title='ffmpeg_sys::AVPacket'>AVPacket</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVFrame.html' title='ffmpeg_sys::AVFrame'>AVFrame</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.decode' class='structfield'>
+                           <span id='decode.v' class='invisible'>
+                           <code>decode: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVPacket.html' title='ffmpeg_sys::AVPacket'>AVPacket</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.close' class='structfield'>
+                           <span id='close.v' class='invisible'>
+                           <code>close: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>) -&gt; <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.flush' class='structfield'>
+                           <span id='flush.v' class='invisible'>
+                           <code>flush: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVCodecContext.html' title='ffmpeg_sys::AVCodecContext'>AVCodecContext</a>)</code>
+                           </span></span><span class='stab '></span><span id='structfield.caps_internal' class='structfield'>
+                           <span id='caps_internal.v' class='invisible'>
+                           <code>caps_internal: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "ffmpeg_sys";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

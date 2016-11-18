@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `encoder` mod in crate `ffmpeg`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, encoder">
+
+    <title>ffmpeg::codec::encoder - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>ffmpeg</a>::<wbr><a href='../index.html'>codec</a></p><script>window.sidebarCurrent = {name: 'encoder', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>ffmpeg</a>::<wbr><a href='../index.html'>codec</a>::<wbr><a class='mod' href=''>encoder</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-3466' class='srclink' href='../../../src/ffmpeg/src/codec/encoder/mod.rs.html#1-61' title='goto source code'>[src]</a></span></h1>
+<h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use self::<a class='mod'
+                                       href='./encoder/index.html'>encoder</a>::<a class='struct' href='../../../ffmpeg/codec/encoder/encoder/struct.Encoder.html' title='ffmpeg::codec::encoder::encoder::Encoder'>Encoder</a>;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./video/index.html'>video</a>::<a class='struct' href='../../../ffmpeg/codec/encoder/video/struct.Encoder.html' title='ffmpeg::codec::encoder::video::Encoder'>Encoder</a> as Video;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./audio/index.html'>audio</a>::<a class='struct' href='../../../ffmpeg/codec/encoder/audio/struct.Encoder.html' title='ffmpeg::codec::encoder::audio::Encoder'>Encoder</a> as Audio;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./subtitle/index.html'>subtitle</a>::<a class='struct' href='../../../ffmpeg/codec/encoder/subtitle/struct.Encoder.html' title='ffmpeg::codec::encoder::subtitle::Encoder'>Encoder</a> as Subtitle;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./motion_estimation/index.html'>motion_estimation</a>::<a class='enum' href='../../../ffmpeg/codec/encoder/motion_estimation/enum.MotionEstimation.html' title='ffmpeg::codec::encoder::motion_estimation::MotionEstimation'>MotionEstimation</a>;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./prediction/index.html'>prediction</a>::<a class='enum' href='../../../ffmpeg/codec/encoder/prediction/enum.Prediction.html' title='ffmpeg::codec::encoder::prediction::Prediction'>Prediction</a>;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./comparison/index.html'>comparison</a>::<a class='enum' href='../../../ffmpeg/codec/encoder/comparison/enum.Comparison.html' title='ffmpeg::codec::encoder::comparison::Comparison'>Comparison</a>;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./decision/index.html'>decision</a>::<a class='enum' href='../../../ffmpeg/codec/encoder/decision/enum.Decision.html' title='ffmpeg::codec::encoder::decision::Decision'>Decision</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='audio/index.html'
+                                  title='ffmpeg::codec::encoder::audio'>audio</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='comparison/index.html'
+                                  title='ffmpeg::codec::encoder::comparison'>comparison</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='decision/index.html'
+                                  title='ffmpeg::codec::encoder::decision'>decision</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='encoder/index.html'
+                                  title='ffmpeg::codec::encoder::encoder'>encoder</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='motion_estimation/index.html'
+                                  title='ffmpeg::codec::encoder::motion_estimation'>motion_estimation</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='prediction/index.html'
+                                  title='ffmpeg::codec::encoder::prediction'>prediction</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='subtitle/index.html'
+                                  title='ffmpeg::codec::encoder::subtitle'>subtitle</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='video/index.html'
+                                  title='ffmpeg::codec::encoder::video'>video</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.find.html'
+                                  title='ffmpeg::codec::encoder::find'>find</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.find_by_name.html'
+                                  title='ffmpeg::codec::encoder::find_by_name'>find_by_name</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.new.html'
+                                  title='ffmpeg::codec::encoder::new'>new</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "ffmpeg";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

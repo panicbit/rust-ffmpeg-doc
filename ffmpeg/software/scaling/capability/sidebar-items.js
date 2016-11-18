@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["ALTIVEC",""],["BFIN",""],["MMX",""],["MMX2",""],["MMXEXT",""],["SSE2",""],["_3DNOW",""]],"struct":[["Capabilities",""]]});

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AVFormatContext` struct in crate `ffmpeg`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AVFormatContext">
+
+    <title>ffmpeg::ffi::AVFormatContext - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>ffmpeg</a>::<wbr><a href='index.html'>ffi</a></p><script>window.sidebarCurrent = {name: 'AVFormatContext', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>ffmpeg</a>::<wbr><a href='index.html'>ffi</a>::<wbr><a class='struct' href=''>AVFormatContext</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-3564' class='srclink' href='../../ffmpeg_sys/avformat/format/struct.AVFormatContext.html?gotosrc=3564' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct AVFormatContext {
+    pub av_class: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../ffmpeg/ffi/struct.AVClass.html' title='ffmpeg::ffi::AVClass'>AVClass</a>,
+    pub iformat: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVInputFormat.html' title='ffmpeg::ffi::AVInputFormat'>AVInputFormat</a>,
+    pub oformat: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVOutputFormat.html' title='ffmpeg::ffi::AVOutputFormat'>AVOutputFormat</a>,
+    pub priv_data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>,
+    pub pb: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVIOContext.html' title='ffmpeg::ffi::AVIOContext'>AVIOContext</a>,
+    pub ctx_flags: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub nb_streams: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub streams: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVStream.html' title='ffmpeg::ffi::AVStream'>AVStream</a>,
+    pub filename: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 1024]</a>,
+    pub start_time: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>,
+    pub duration: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>,
+    pub bit_rate: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub packet_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub max_delay: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub flags: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub key: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
+    pub keylen: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub nb_programs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub programs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVProgram.html' title='ffmpeg::ffi::AVProgram'>AVProgram</a>,
+    pub video_codec_id: <a class='enum' href='../../ffmpeg/ffi/enum.AVCodecID.html' title='ffmpeg::ffi::AVCodecID'>AVCodecID</a>,
+    pub audio_codec_id: <a class='enum' href='../../ffmpeg/ffi/enum.AVCodecID.html' title='ffmpeg::ffi::AVCodecID'>AVCodecID</a>,
+    pub subtitle_codec_id: <a class='enum' href='../../ffmpeg/ffi/enum.AVCodecID.html' title='ffmpeg::ffi::AVCodecID'>AVCodecID</a>,
+    pub max_index_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub max_picture_buffer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub nb_chapters: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub chapters: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVChapter.html' title='ffmpeg::ffi::AVChapter'>AVChapter</a>,
+    pub metadata: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>,
+    pub start_time_realtime: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>,
+    pub fps_probe_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub error_recognition: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub interrupt_callback: <a class='struct' href='../../ffmpeg/ffi/struct.AVIOInterruptCB.html' title='ffmpeg::ffi::AVIOInterruptCB'>AVIOInterruptCB</a>,
+    pub debug: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub max_interleave_delta: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>,
+    pub strict_std_compliance: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub event_flags: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub max_ts_probe: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub avoid_negative_ts: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub ts_id: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub audio_preload: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub max_chunk_duration: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub max_chunk_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub use_wallclock_as_timestamp: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub avio_flags: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub duration_estimation_method: <a class='enum' href='../../ffmpeg/ffi/enum.AVDurationEstimationMethod.html' title='ffmpeg::ffi::AVDurationEstimationMethod'>AVDurationEstimationMethod</a>,
+    pub skip_initial_bytes: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>,
+    pub correct_ts_overflow: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub seek2any: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub flush_packets: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub probe_score: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub format_probesize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub codec_whitelist: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a>,
+    pub format_whitelist: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a>,
+    pub internal: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>,
+    pub io_repositioned: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub video_codec: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVCodec.html' title='ffmpeg::ffi::AVCodec'>AVCodec</a>,
+    pub audio_codec: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVCodec.html' title='ffmpeg::ffi::AVCodec'>AVCodec</a>,
+    pub subtitle_codec: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVCodec.html' title='ffmpeg::ffi::AVCodec'>AVCodec</a>,
+    pub data_codec: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVCodec.html' title='ffmpeg::ffi::AVCodec'>AVCodec</a>,
+    pub metadata_header_padding: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub opaque: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>,
+    pub control_message_cb: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFormatContext.html' title='ffmpeg::ffi::AVFormatContext'>AVFormatContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub output_ts_offset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>,
+    pub max_analyze_duration: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>,
+    pub probesize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>,
+    pub dump_separator: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
+    pub data_codec_id: <a class='enum' href='../../ffmpeg/ffi/enum.AVCodecID.html' title='ffmpeg::ffi::AVCodecID'>AVCodecID</a>,
+    pub open_cb: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFormatContext.html' title='ffmpeg::ffi::AVFormatContext'>AVFormatContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVIOContext.html' title='ffmpeg::ffi::AVIOContext'>AVIOContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../ffmpeg/ffi/struct.AVIOInterruptCB.html' title='ffmpeg::ffi::AVIOInterruptCB'>AVIOInterruptCB</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+}</pre><h2 class='fields'>Fields</h2><span id='structfield.av_class' class='structfield'>
+                           <span id='av_class.v' class='invisible'>
+                           <code>av_class: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../ffmpeg/ffi/struct.AVClass.html' title='ffmpeg::ffi::AVClass'>AVClass</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.iformat' class='structfield'>
+                           <span id='iformat.v' class='invisible'>
+                           <code>iformat: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVInputFormat.html' title='ffmpeg::ffi::AVInputFormat'>AVInputFormat</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.oformat' class='structfield'>
+                           <span id='oformat.v' class='invisible'>
+                           <code>oformat: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVOutputFormat.html' title='ffmpeg::ffi::AVOutputFormat'>AVOutputFormat</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.priv_data' class='structfield'>
+                           <span id='priv_data.v' class='invisible'>
+                           <code>priv_data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.pb' class='structfield'>
+                           <span id='pb.v' class='invisible'>
+                           <code>pb: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVIOContext.html' title='ffmpeg::ffi::AVIOContext'>AVIOContext</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.ctx_flags' class='structfield'>
+                           <span id='ctx_flags.v' class='invisible'>
+                           <code>ctx_flags: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.nb_streams' class='structfield'>
+                           <span id='nb_streams.v' class='invisible'>
+                           <code>nb_streams: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.streams' class='structfield'>
+                           <span id='streams.v' class='invisible'>
+                           <code>streams: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVStream.html' title='ffmpeg::ffi::AVStream'>AVStream</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.filename' class='structfield'>
+                           <span id='filename.v' class='invisible'>
+                           <code>filename: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 1024]</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.start_time' class='structfield'>
+                           <span id='start_time.v' class='invisible'>
+                           <code>start_time: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.duration' class='structfield'>
+                           <span id='duration.v' class='invisible'>
+                           <code>duration: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.bit_rate' class='structfield'>
+                           <span id='bit_rate.v' class='invisible'>
+                           <code>bit_rate: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.packet_size' class='structfield'>
+                           <span id='packet_size.v' class='invisible'>
+                           <code>packet_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.max_delay' class='structfield'>
+                           <span id='max_delay.v' class='invisible'>
+                           <code>max_delay: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.flags' class='structfield'>
+                           <span id='flags.v' class='invisible'>
+                           <code>flags: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.key' class='structfield'>
+                           <span id='key.v' class='invisible'>
+                           <code>key: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.keylen' class='structfield'>
+                           <span id='keylen.v' class='invisible'>
+                           <code>keylen: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.nb_programs' class='structfield'>
+                           <span id='nb_programs.v' class='invisible'>
+                           <code>nb_programs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.programs' class='structfield'>
+                           <span id='programs.v' class='invisible'>
+                           <code>programs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVProgram.html' title='ffmpeg::ffi::AVProgram'>AVProgram</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.video_codec_id' class='structfield'>
+                           <span id='video_codec_id.v' class='invisible'>
+                           <code>video_codec_id: <a class='enum' href='../../ffmpeg/ffi/enum.AVCodecID.html' title='ffmpeg::ffi::AVCodecID'>AVCodecID</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.audio_codec_id' class='structfield'>
+                           <span id='audio_codec_id.v' class='invisible'>
+                           <code>audio_codec_id: <a class='enum' href='../../ffmpeg/ffi/enum.AVCodecID.html' title='ffmpeg::ffi::AVCodecID'>AVCodecID</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.subtitle_codec_id' class='structfield'>
+                           <span id='subtitle_codec_id.v' class='invisible'>
+                           <code>subtitle_codec_id: <a class='enum' href='../../ffmpeg/ffi/enum.AVCodecID.html' title='ffmpeg::ffi::AVCodecID'>AVCodecID</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.max_index_size' class='structfield'>
+                           <span id='max_index_size.v' class='invisible'>
+                           <code>max_index_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.max_picture_buffer' class='structfield'>
+                           <span id='max_picture_buffer.v' class='invisible'>
+                           <code>max_picture_buffer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.nb_chapters' class='structfield'>
+                           <span id='nb_chapters.v' class='invisible'>
+                           <code>nb_chapters: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.chapters' class='structfield'>
+                           <span id='chapters.v' class='invisible'>
+                           <code>chapters: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVChapter.html' title='ffmpeg::ffi::AVChapter'>AVChapter</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.metadata' class='structfield'>
+                           <span id='metadata.v' class='invisible'>
+                           <code>metadata: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.start_time_realtime' class='structfield'>
+                           <span id='start_time_realtime.v' class='invisible'>
+                           <code>start_time_realtime: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.fps_probe_size' class='structfield'>
+                           <span id='fps_probe_size.v' class='invisible'>
+                           <code>fps_probe_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.error_recognition' class='structfield'>
+                           <span id='error_recognition.v' class='invisible'>
+                           <code>error_recognition: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.interrupt_callback' class='structfield'>
+                           <span id='interrupt_callback.v' class='invisible'>
+                           <code>interrupt_callback: <a class='struct' href='../../ffmpeg/ffi/struct.AVIOInterruptCB.html' title='ffmpeg::ffi::AVIOInterruptCB'>AVIOInterruptCB</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.debug' class='structfield'>
+                           <span id='debug.v' class='invisible'>
+                           <code>debug: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.max_interleave_delta' class='structfield'>
+                           <span id='max_interleave_delta.v' class='invisible'>
+                           <code>max_interleave_delta: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.strict_std_compliance' class='structfield'>
+                           <span id='strict_std_compliance.v' class='invisible'>
+                           <code>strict_std_compliance: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.event_flags' class='structfield'>
+                           <span id='event_flags.v' class='invisible'>
+                           <code>event_flags: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.max_ts_probe' class='structfield'>
+                           <span id='max_ts_probe.v' class='invisible'>
+                           <code>max_ts_probe: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.avoid_negative_ts' class='structfield'>
+                           <span id='avoid_negative_ts.v' class='invisible'>
+                           <code>avoid_negative_ts: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.ts_id' class='structfield'>
+                           <span id='ts_id.v' class='invisible'>
+                           <code>ts_id: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.audio_preload' class='structfield'>
+                           <span id='audio_preload.v' class='invisible'>
+                           <code>audio_preload: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.max_chunk_duration' class='structfield'>
+                           <span id='max_chunk_duration.v' class='invisible'>
+                           <code>max_chunk_duration: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.max_chunk_size' class='structfield'>
+                           <span id='max_chunk_size.v' class='invisible'>
+                           <code>max_chunk_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.use_wallclock_as_timestamp' class='structfield'>
+                           <span id='use_wallclock_as_timestamp.v' class='invisible'>
+                           <code>use_wallclock_as_timestamp: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.avio_flags' class='structfield'>
+                           <span id='avio_flags.v' class='invisible'>
+                           <code>avio_flags: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.duration_estimation_method' class='structfield'>
+                           <span id='duration_estimation_method.v' class='invisible'>
+                           <code>duration_estimation_method: <a class='enum' href='../../ffmpeg/ffi/enum.AVDurationEstimationMethod.html' title='ffmpeg::ffi::AVDurationEstimationMethod'>AVDurationEstimationMethod</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.skip_initial_bytes' class='structfield'>
+                           <span id='skip_initial_bytes.v' class='invisible'>
+                           <code>skip_initial_bytes: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.correct_ts_overflow' class='structfield'>
+                           <span id='correct_ts_overflow.v' class='invisible'>
+                           <code>correct_ts_overflow: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.seek2any' class='structfield'>
+                           <span id='seek2any.v' class='invisible'>
+                           <code>seek2any: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.flush_packets' class='structfield'>
+                           <span id='flush_packets.v' class='invisible'>
+                           <code>flush_packets: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.probe_score' class='structfield'>
+                           <span id='probe_score.v' class='invisible'>
+                           <code>probe_score: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.format_probesize' class='structfield'>
+                           <span id='format_probesize.v' class='invisible'>
+                           <code>format_probesize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.codec_whitelist' class='structfield'>
+                           <span id='codec_whitelist.v' class='invisible'>
+                           <code>codec_whitelist: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.format_whitelist' class='structfield'>
+                           <span id='format_whitelist.v' class='invisible'>
+                           <code>format_whitelist: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.internal' class='structfield'>
+                           <span id='internal.v' class='invisible'>
+                           <code>internal: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.io_repositioned' class='structfield'>
+                           <span id='io_repositioned.v' class='invisible'>
+                           <code>io_repositioned: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.video_codec' class='structfield'>
+                           <span id='video_codec.v' class='invisible'>
+                           <code>video_codec: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVCodec.html' title='ffmpeg::ffi::AVCodec'>AVCodec</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.audio_codec' class='structfield'>
+                           <span id='audio_codec.v' class='invisible'>
+                           <code>audio_codec: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVCodec.html' title='ffmpeg::ffi::AVCodec'>AVCodec</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.subtitle_codec' class='structfield'>
+                           <span id='subtitle_codec.v' class='invisible'>
+                           <code>subtitle_codec: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVCodec.html' title='ffmpeg::ffi::AVCodec'>AVCodec</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.data_codec' class='structfield'>
+                           <span id='data_codec.v' class='invisible'>
+                           <code>data_codec: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVCodec.html' title='ffmpeg::ffi::AVCodec'>AVCodec</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.metadata_header_padding' class='structfield'>
+                           <span id='metadata_header_padding.v' class='invisible'>
+                           <code>metadata_header_padding: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.opaque' class='structfield'>
+                           <span id='opaque.v' class='invisible'>
+                           <code>opaque: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.control_message_cb' class='structfield'>
+                           <span id='control_message_cb.v' class='invisible'>
+                           <code>control_message_cb: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFormatContext.html' title='ffmpeg::ffi::AVFormatContext'>AVFormatContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.output_ts_offset' class='structfield'>
+                           <span id='output_ts_offset.v' class='invisible'>
+                           <code>output_ts_offset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.max_analyze_duration' class='structfield'>
+                           <span id='max_analyze_duration.v' class='invisible'>
+                           <code>max_analyze_duration: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.probesize' class='structfield'>
+                           <span id='probesize.v' class='invisible'>
+                           <code>probesize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.dump_separator' class='structfield'>
+                           <span id='dump_separator.v' class='invisible'>
+                           <code>dump_separator: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.data_codec_id' class='structfield'>
+                           <span id='data_codec_id.v' class='invisible'>
+                           <code>data_codec_id: <a class='enum' href='../../ffmpeg/ffi/enum.AVCodecID.html' title='ffmpeg::ffi::AVCodecID'>AVCodecID</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.open_cb' class='structfield'>
+                           <span id='open_cb.v' class='invisible'>
+                           <code>open_cb: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFormatContext.html' title='ffmpeg::ffi::AVFormatContext'>AVFormatContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVIOContext.html' title='ffmpeg::ffi::AVIOContext'>AVIOContext</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../ffmpeg/ffi/struct.AVIOInterruptCB.html' title='ffmpeg::ffi::AVIOInterruptCB'>AVIOInterruptCB</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "ffmpeg";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

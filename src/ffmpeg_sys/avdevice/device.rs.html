@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="Source to the Rust file `/home/mike/.cargo/registry/src/github.com-1ecc6299db9ec823/ffmpeg-sys-2.8.9/src/avdevice/device.rs`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang">
+
+    <title>device.rs.html -- source</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content source"><pre class="line-numbers"><span id="1">  1</span>
+<span id="2">  2</span>
+<span id="3">  3</span>
+<span id="4">  4</span>
+<span id="5">  5</span>
+<span id="6">  6</span>
+<span id="7">  7</span>
+<span id="8">  8</span>
+<span id="9">  9</span>
+<span id="10"> 10</span>
+<span id="11"> 11</span>
+<span id="12"> 12</span>
+<span id="13"> 13</span>
+<span id="14"> 14</span>
+<span id="15"> 15</span>
+<span id="16"> 16</span>
+<span id="17"> 17</span>
+<span id="18"> 18</span>
+<span id="19"> 19</span>
+<span id="20"> 20</span>
+<span id="21"> 21</span>
+<span id="22"> 22</span>
+<span id="23"> 23</span>
+<span id="24"> 24</span>
+<span id="25"> 25</span>
+<span id="26"> 26</span>
+<span id="27"> 27</span>
+<span id="28"> 28</span>
+<span id="29"> 29</span>
+<span id="30"> 30</span>
+<span id="31"> 31</span>
+<span id="32"> 32</span>
+<span id="33"> 33</span>
+<span id="34"> 34</span>
+<span id="35"> 35</span>
+<span id="36"> 36</span>
+<span id="37"> 37</span>
+<span id="38"> 38</span>
+<span id="39"> 39</span>
+<span id="40"> 40</span>
+<span id="41"> 41</span>
+<span id="42"> 42</span>
+<span id="43"> 43</span>
+<span id="44"> 44</span>
+<span id="45"> 45</span>
+<span id="46"> 46</span>
+<span id="47"> 47</span>
+<span id="48"> 48</span>
+<span id="49"> 49</span>
+<span id="50"> 50</span>
+<span id="51"> 51</span>
+<span id="52"> 52</span>
+<span id="53"> 53</span>
+<span id="54"> 54</span>
+<span id="55"> 55</span>
+<span id="56"> 56</span>
+<span id="57"> 57</span>
+<span id="58"> 58</span>
+<span id="59"> 59</span>
+<span id="60"> 60</span>
+<span id="61"> 61</span>
+<span id="62"> 62</span>
+<span id="63"> 63</span>
+<span id="64"> 64</span>
+<span id="65"> 65</span>
+<span id="66"> 66</span>
+<span id="67"> 67</span>
+<span id="68"> 68</span>
+<span id="69"> 69</span>
+<span id="70"> 70</span>
+<span id="71"> 71</span>
+<span id="72"> 72</span>
+<span id="73"> 73</span>
+<span id="74"> 74</span>
+<span id="75"> 75</span>
+<span id="76"> 76</span>
+<span id="77"> 77</span>
+<span id="78"> 78</span>
+<span id="79"> 79</span>
+<span id="80"> 80</span>
+<span id="81"> 81</span>
+<span id="82"> 82</span>
+<span id="83"> 83</span>
+<span id="84"> 84</span>
+<span id="85"> 85</span>
+<span id="86"> 86</span>
+<span id="87"> 87</span>
+<span id="88"> 88</span>
+<span id="89"> 89</span>
+<span id="90"> 90</span>
+<span id="91"> 91</span>
+<span id="92"> 92</span>
+<span id="93"> 93</span>
+<span id="94"> 94</span>
+<span id="95"> 95</span>
+<span id="96"> 96</span>
+<span id="97"> 97</span>
+<span id="98"> 98</span>
+<span id="99"> 99</span>
+<span id="100">100</span>
+<span id="101">101</span>
+<span id="102">102</span>
+<span id="103">103</span>
+<span id="104">104</span>
+<span id="105">105</span>
+<span id="106">106</span>
+</pre><pre class='rust '>
+<span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_void</span>, <span class='ident'>c_char</span>, <span class='ident'>c_int</span>, <span class='ident'>c_uint</span>, <span class='ident'>int64_t</span>, <span class='ident'>size_t</span>};
+<span class='kw'>use</span> <span class='kw'>super</span>::<span class='kw'>super</span>::<span class='ident'>avutil</span>::{<span class='ident'>AVClass</span>, <span class='ident'>AVPixelFormat</span>, <span class='ident'>AVSampleFormat</span>, <span class='ident'>AVOption</span>, <span class='ident'>AVDictionary</span>, <span class='ident'>AVRational</span>};
+<span class='kw'>use</span> <span class='kw'>super</span>::<span class='kw'>super</span>::<span class='ident'>avcodec</span>::{<span class='ident'>AVCodecID</span>};
+<span class='kw'>use</span> <span class='kw'>super</span>::<span class='kw'>super</span>::<span class='ident'>avformat</span>::{<span class='ident'>AVFormatContext</span>, <span class='ident'>AVInputFormat</span>, <span class='ident'>AVOutputFormat</span>};
+
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
+<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>AVDeviceRect</span> {
+	<span class='kw'>pub</span> <span class='ident'>x</span>: <span class='ident'>c_int</span>,
+	<span class='kw'>pub</span> <span class='ident'>y</span>: <span class='ident'>c_int</span>,
+	<span class='kw'>pub</span> <span class='ident'>width</span>: <span class='ident'>c_int</span>,
+	<span class='kw'>pub</span> <span class='ident'>height</span>: <span class='ident'>c_int</span>,
+}
+
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Copy</span>, <span class='ident'>Clone</span>, <span class='ident'>Debug</span>)]</span>
+<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>AVAppToDevMessageType</span> {
+	<span class='ident'>AV_APP_TO_DEV_NONE</span>           <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;N&#39;</span>, <span class='string'>b&#39;O&#39;</span>, <span class='string'>b&#39;N&#39;</span>, <span class='string'>b&#39;E&#39;</span>),
+	<span class='ident'>AV_APP_TO_DEV_WINDOW_SIZE</span>    <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;G&#39;</span>, <span class='string'>b&#39;E&#39;</span>, <span class='string'>b&#39;O&#39;</span>, <span class='string'>b&#39;M&#39;</span>),
+	<span class='ident'>AV_APP_TO_DEV_WINDOW_REPAINT</span> <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;R&#39;</span>, <span class='string'>b&#39;E&#39;</span>, <span class='string'>b&#39;P&#39;</span>, <span class='string'>b&#39;A&#39;</span>),
+	<span class='ident'>AV_APP_TO_DEV_PAUSE</span>          <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;P&#39;</span>, <span class='string'>b&#39;A&#39;</span>, <span class='string'>b&#39;U&#39;</span>, <span class='string'>b&#39; &#39;</span>),
+	<span class='ident'>AV_APP_TO_DEV_PLAY</span>           <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;P&#39;</span>, <span class='string'>b&#39;L&#39;</span>, <span class='string'>b&#39;A&#39;</span>, <span class='string'>b&#39;Y&#39;</span>),
+	<span class='ident'>AV_APP_TO_DEV_TOGGLE_PAUSE</span>   <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;P&#39;</span>, <span class='string'>b&#39;A&#39;</span>, <span class='string'>b&#39;U&#39;</span>, <span class='string'>b&#39;T&#39;</span>),
+	<span class='ident'>AV_APP_TO_DEV_SET_VOLUME</span>     <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;S&#39;</span>, <span class='string'>b&#39;V&#39;</span>, <span class='string'>b&#39;O&#39;</span>, <span class='string'>b&#39;L&#39;</span>),
+	<span class='ident'>AV_APP_TO_DEV_MUTE</span>           <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39; &#39;</span>, <span class='string'>b&#39;M&#39;</span>, <span class='string'>b&#39;U&#39;</span>, <span class='string'>b&#39;T&#39;</span>),
+	<span class='ident'>AV_APP_TO_DEV_UNMUTE</span>         <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;U&#39;</span>, <span class='string'>b&#39;M&#39;</span>, <span class='string'>b&#39;U&#39;</span>, <span class='string'>b&#39;T&#39;</span>),
+	<span class='ident'>AV_APP_TO_DEV_TOGGLE_MUTE</span>    <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;T&#39;</span>, <span class='string'>b&#39;M&#39;</span>, <span class='string'>b&#39;U&#39;</span>, <span class='string'>b&#39;T&#39;</span>),
+	<span class='ident'>AV_APP_TO_DEV_GET_VOLUME</span>     <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;G&#39;</span>, <span class='string'>b&#39;V&#39;</span>, <span class='string'>b&#39;O&#39;</span>, <span class='string'>b&#39;L&#39;</span>),
+	<span class='ident'>AV_APP_TO_DEV_GET_MUTE</span>       <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;G&#39;</span>, <span class='string'>b&#39;M&#39;</span>, <span class='string'>b&#39;U&#39;</span>, <span class='string'>b&#39;T&#39;</span>),
+}
+
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Copy</span>, <span class='ident'>Clone</span>, <span class='ident'>Debug</span>)]</span>
+<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>AVDevToAppMessageType</span> {
+	<span class='ident'>AV_DEV_TO_APP_NONE</span>                  <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;N&#39;</span>, <span class='string'>b&#39;O&#39;</span>, <span class='string'>b&#39;N&#39;</span>, <span class='string'>b&#39;E&#39;</span>),
+	<span class='ident'>AV_DEV_TO_APP_CREATE_WINDOW_BUFFER</span>  <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;B&#39;</span>, <span class='string'>b&#39;C&#39;</span>, <span class='string'>b&#39;R&#39;</span>, <span class='string'>b&#39;E&#39;</span>),
+	<span class='ident'>AV_DEV_TO_APP_PREPARE_WINDOW_BUFFER</span> <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;B&#39;</span>, <span class='string'>b&#39;P&#39;</span>, <span class='string'>b&#39;R&#39;</span>, <span class='string'>b&#39;E&#39;</span>),
+	<span class='ident'>AV_DEV_TO_APP_DISPLAY_WINDOW_BUFFER</span> <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;B&#39;</span>, <span class='string'>b&#39;D&#39;</span>, <span class='string'>b&#39;I&#39;</span>, <span class='string'>b&#39;S&#39;</span>),
+	<span class='ident'>AV_DEV_TO_APP_DESTROY_WINDOW_BUFFER</span> <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;B&#39;</span>, <span class='string'>b&#39;D&#39;</span>, <span class='string'>b&#39;E&#39;</span>, <span class='string'>b&#39;S&#39;</span>),
+	<span class='ident'>AV_DEV_TO_APP_BUFFER_OVERFLOW</span>       <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;B&#39;</span>, <span class='string'>b&#39;O&#39;</span>, <span class='string'>b&#39;F&#39;</span>, <span class='string'>b&#39;L&#39;</span>),
+	<span class='ident'>AV_DEV_TO_APP_BUFFER_UNDERFLOW</span>      <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;B&#39;</span>, <span class='string'>b&#39;U&#39;</span>, <span class='string'>b&#39;F&#39;</span>, <span class='string'>b&#39;L&#39;</span>),
+	<span class='ident'>AV_DEV_TO_APP_BUFFER_READABLE</span>       <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;B&#39;</span>, <span class='string'>b&#39;R&#39;</span>, <span class='string'>b&#39;D&#39;</span>, <span class='string'>b&#39; &#39;</span>),
+	<span class='ident'>AV_DEV_TO_APP_BUFFER_WRITABLE</span>       <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;B&#39;</span>, <span class='string'>b&#39;W&#39;</span>, <span class='string'>b&#39;R&#39;</span>, <span class='string'>b&#39; &#39;</span>),
+	<span class='ident'>AV_DEV_TO_APP_MUTE_STATE_CHANGED</span>    <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;C&#39;</span>, <span class='string'>b&#39;M&#39;</span>, <span class='string'>b&#39;U&#39;</span>, <span class='string'>b&#39;T&#39;</span>),
+	<span class='ident'>AV_DEV_TO_APP_VOLUME_LEVEL_CHANGED</span>  <span class='op'>=</span> <span class='macro'>MKBETAG</span><span class='macro'>!</span>(<span class='string'>b&#39;C&#39;</span>, <span class='string'>b&#39;V&#39;</span>, <span class='string'>b&#39;O&#39;</span>, <span class='string'>b&#39;L&#39;</span>),
+}
+
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
+<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>AVDeviceCapabilitiesQuery</span> {
+	<span class='kw'>pub</span> <span class='ident'>av_class</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>AVClass</span>,
+	<span class='kw'>pub</span> <span class='ident'>device_context</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>AVFormatContext</span>,
+	<span class='kw'>pub</span> <span class='ident'>codec</span>: <span class='ident'>AVCodecID</span>,
+	<span class='kw'>pub</span> <span class='ident'>sample_format</span>: <span class='ident'>AVSampleFormat</span>,
+	<span class='kw'>pub</span> <span class='ident'>pixel_format</span>: <span class='ident'>AVPixelFormat</span>,
+	<span class='kw'>pub</span> <span class='ident'>sample_rate</span>: <span class='ident'>c_int</span>,
+	<span class='kw'>pub</span> <span class='ident'>channels</span>: <span class='ident'>c_int</span>,
+	<span class='kw'>pub</span> <span class='ident'>channel_layout</span>: <span class='ident'>int64_t</span>,
+	<span class='kw'>pub</span> <span class='ident'>window_width</span>: <span class='ident'>c_int</span>,
+	<span class='kw'>pub</span> <span class='ident'>window_height</span>: <span class='ident'>c_int</span>,
+	<span class='kw'>pub</span> <span class='ident'>frame_width</span>: <span class='ident'>c_int</span>,
+	<span class='kw'>pub</span> <span class='ident'>frame_height</span>: <span class='ident'>c_int</span>,
+	<span class='kw'>pub</span> <span class='ident'>fps</span>: <span class='ident'>AVRational</span>,
+}
+
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
+<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>AVDeviceInfo</span> {
+	<span class='kw'>pub</span> <span class='ident'>device_name</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>c_char</span>,
+	<span class='kw'>pub</span> <span class='ident'>device_description</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>c_char</span>,
+}
+
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
+<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>AVDeviceInfoList</span> {
+	<span class='kw'>pub</span> <span class='ident'>devices</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVDeviceInfo</span>,
+	<span class='kw'>pub</span> <span class='ident'>nb_devices</span>: <span class='ident'>c_int</span>,
+	<span class='kw'>pub</span> <span class='ident'>default_device</span>: <span class='ident'>c_int</span>,
+}
+
+<span class='kw'>extern</span> {
+	<span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>av_device_capabilities</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>AVOption</span>;
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>avdevice_version</span>() <span class='op'>-&gt;</span> <span class='ident'>c_uint</span>;
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>avdevice_configuration</span>() <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>;
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>avdevice_license</span>() <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>;
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>avdevice_register_all</span>();
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>av_input_audio_device_next</span>(<span class='ident'>d</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVInputFormat</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVInputFormat</span>;
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>av_input_video_device_next</span>(<span class='ident'>d</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVInputFormat</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVInputFormat</span>;
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>av_output_audio_device_next</span>(<span class='ident'>d</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVOutputFormat</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVOutputFormat</span>;
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>av_output_video_device_next</span>(<span class='ident'>d</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVOutputFormat</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVOutputFormat</span>;
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>avdevice_app_to_dev_control_message</span>(<span class='ident'>s</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>AVFormatContext</span>, <span class='ident'>kind</span>: <span class='ident'>AVAppToDevMessageType</span>, <span class='ident'>data</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>c_void</span>, <span class='ident'>data_size</span>: <span class='ident'>size_t</span>) <span class='op'>-&gt;</span> <span class='ident'>c_int</span>;
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>avdevice_dev_to_app_control_message</span>(<span class='ident'>s</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>AVFormatContext</span>, <span class='ident'>kind</span>: <span class='ident'>AVDevToAppMessageType</span>, <span class='ident'>data</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>c_void</span>, <span class='ident'>data_size</span>: <span class='ident'>size_t</span>) <span class='op'>-&gt;</span> <span class='ident'>c_int</span>;
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>avdevice_capabilities_create</span>(<span class='ident'>caps</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVDeviceCapabilitiesQuery</span>, <span class='ident'>s</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>AVFormatContext</span>, <span class='ident'>device_options</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVDictionary</span>) <span class='op'>-&gt;</span> <span class='ident'>c_int</span>;
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>avdevice_capabilities_free</span>(<span class='ident'>caps</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVDeviceCapabilitiesQuery</span>, <span class='ident'>s</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>AVFormatContext</span>);
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>avdevice_list_devices</span>(<span class='ident'>s</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>AVFormatContext</span>, <span class='ident'>device_list</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVDeviceInfoList</span>) <span class='op'>-&gt;</span> <span class='ident'>c_int</span>;
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>avdevice_free_list_devices</span>(<span class='ident'>device_list</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVDeviceInfoList</span>);
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>avdevice_list_input_sources</span>(<span class='ident'>device</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVInputFormat</span>, <span class='ident'>device_name</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>, <span class='ident'>device_options</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVDictionary</span>, <span class='ident'>device_list</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVDeviceInfoList</span>) <span class='op'>-&gt;</span> <span class='ident'>c_int</span>;
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>avdevice_list_output_sinks</span>(<span class='ident'>device</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVOutputFormat</span>, <span class='ident'>device_name</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>, <span class='ident'>device_options</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVDictionary</span>, <span class='ident'>device_list</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AVDeviceInfoList</span>) <span class='op'>-&gt;</span> <span class='ident'>c_int</span>;
+}
+</pre>
+</section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "ffmpeg_sys";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

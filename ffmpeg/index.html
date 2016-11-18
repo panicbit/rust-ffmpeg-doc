@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ffmpeg` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ffmpeg">
+
+    <title>ffmpeg - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'></p><script>window.sidebarCurrent = {name: 'ffmpeg', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>ffmpeg</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-0' class='srclink' href='../src/ffmpeg/src/lib.rs.html#1-101' title='goto source code'>[src]</a></span></h1>
+<h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub extern crate <a class='mod' href='../ffmpeg/ffi/index.html' title='ffmpeg::ffi'>ffmpeg_sys</a> as sys;</code></td></tr><tr><td><code>pub use util::error::<a class='enum' href='../ffmpeg/util/error/enum.Error.html' title='ffmpeg::util::error::Error'>Error</a>;</code></td></tr><tr><td><code>pub use util::<a class='mod' href='../ffmpeg/util/dictionary/index.html' title='ffmpeg::util::dictionary'>dictionary</a>;</code></td></tr><tr><td><code>pub use util::rational::{<a class='mod' href='../ffmpeg/util/rational/index.html' title='ffmpeg::util::rational'>self</a>, <a class='struct' href='../ffmpeg/util/rational/struct.Rational.html' title='ffmpeg::util::rational::Rational'>Rational</a>};</code></td></tr><tr><td><code>pub use util::<a class='mod' href='../ffmpeg/util/media/index.html' title='ffmpeg::util::media'>media</a>;</code></td></tr><tr><td><code>pub use util::<a class='mod' href='../ffmpeg/util/picture/index.html' title='ffmpeg::util::picture'>picture</a>;</code></td></tr><tr><td><code>pub use util::<a class='mod' href='../ffmpeg/util/color/index.html' title='ffmpeg::util::color'>color</a>;</code></td></tr><tr><td><code>pub use util::<a class='mod' href='../ffmpeg/util/chroma/index.html' title='ffmpeg::util::chroma'>chroma</a>;</code></td></tr><tr><td><code>pub use util::<a class='mod' href='../ffmpeg/util/time/index.html' title='ffmpeg::util::time'>time</a>;</code></td></tr><tr><td><code>pub use util::frame::{<a class='mod' href='../ffmpeg/util/frame/index.html' title='ffmpeg::util::frame'>self</a>, <a class='struct' href='../ffmpeg/util/frame/struct.Frame.html' title='ffmpeg::util::frame::Frame'>Frame</a>};</code></td></tr><tr><td><code>pub use util::channel_layout::{<a class='mod' href='../ffmpeg/util/channel_layout/index.html' title='ffmpeg::util::channel_layout'>self</a>, <a class='struct' href='../ffmpeg/util/channel_layout/struct.ChannelLayout.html' title='ffmpeg::util::channel_layout::ChannelLayout'>ChannelLayout</a>};</code></td></tr><tr><td><code>pub use util::<a class='mod' href='../ffmpeg/util/option/index.html' title='ffmpeg::util::option'>option</a>;</code></td></tr><tr><td><code>pub use util::mathematics::{<a class='mod' href='../ffmpeg/util/mathematics/index.html' title='ffmpeg::util::mathematics'>self</a>, <a class='enum' href='../ffmpeg/util/mathematics/rounding/enum.Rounding.html' title='ffmpeg::util::mathematics::rounding::Rounding'>Rounding</a>, <a class='trait' href='../ffmpeg/util/mathematics/rescale/trait.Rescale.html' title='ffmpeg::util::mathematics::rescale::Rescale'>Rescale</a>, <a class='mod' href='../ffmpeg/util/mathematics/rescale/index.html' title='ffmpeg::util::mathematics::rescale'>rescale</a>};</code></td></tr><tr><td><code>pub use format::format::<a class='enum' href='../ffmpeg/format/format/enum.Format.html' title='ffmpeg::format::format::Format'>Format</a>;</code></td></tr><tr><td><code>pub use codec::packet::{<a class='mod' href='../ffmpeg/codec/packet/index.html' title='ffmpeg::codec::packet'>self</a>, <a class='struct' href='../ffmpeg/codec/packet/packet/struct.Packet.html' title='ffmpeg::codec::packet::packet::Packet'>Packet</a>};</code></td></tr><tr><td><code>pub use codec::subtitle::{<a class='mod' href='../ffmpeg/codec/subtitle/index.html' title='ffmpeg::codec::subtitle'>self</a>, <a class='struct' href='../ffmpeg/codec/subtitle/struct.Subtitle.html' title='ffmpeg::codec::subtitle::Subtitle'>Subtitle</a>};</code></td></tr><tr><td><code>pub use codec::picture::<a class='struct' href='../ffmpeg/codec/picture/struct.Picture.html' title='ffmpeg::codec::picture::Picture'>Picture</a>;</code></td></tr><tr><td><code>pub use codec::discard::<a class='enum' href='../ffmpeg/codec/discard/enum.Discard.html' title='ffmpeg::codec::discard::Discard'>Discard</a>;</code></td></tr><tr><td><code>pub use codec::codec::<a class='struct' href='../ffmpeg/codec/codec/struct.Codec.html' title='ffmpeg::codec::codec::Codec'>Codec</a>;</code></td></tr><tr><td><code>pub use codec::{<a class='mod' href='../ffmpeg/codec/decoder/index.html' title='ffmpeg::codec::decoder'>decoder</a>, <a class='mod' href='../ffmpeg/codec/encoder/index.html' title='ffmpeg::codec::encoder'>encoder</a>};</code></td></tr><tr><td><code>pub use codec::field_order::<a class='enum' href='../ffmpeg/codec/field_order/enum.FieldOrder.html' title='ffmpeg::codec::field_order::FieldOrder'>FieldOrder</a>;</code></td></tr><tr><td><code>pub use codec::audio_service::<a class='enum' href='../ffmpeg/codec/audio_service/enum.AudioService.html' title='ffmpeg::codec::audio_service::AudioService'>AudioService</a>;</code></td></tr><tr><td><code>pub use codec::<a class='mod' href='../ffmpeg/codec/threading/index.html' title='ffmpeg::codec::threading'>threading</a>;</code></td></tr><tr><td><code>pub use filter::<a class='struct' href='../ffmpeg/filter/filter/struct.Filter.html' title='ffmpeg::filter::filter::Filter'>Filter</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='codec/index.html'
+                                  title='ffmpeg::codec'>codec</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='device/index.html'
+                                  title='ffmpeg::device'>device</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='ffi/index.html'
+                                  title='ffmpeg::ffi'>ffi</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='filter/index.html'
+                                  title='ffmpeg::filter'>filter</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='format/index.html'
+                                  title='ffmpeg::format'>format</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='software/index.html'
+                                  title='ffmpeg::software'>software</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='util/index.html'
+                                  title='ffmpeg::util'>util</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='macro' href='macro.dict.html'
+                                  title='ffmpeg::dict'>dict</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Dictionary.html'
+                                  title='ffmpeg::Dictionary'>Dictionary</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DictionaryMut.html'
+                                  title='ffmpeg::DictionaryMut'>DictionaryMut</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DictionaryRef.html'
+                                  title='ffmpeg::DictionaryRef'>DictionaryRef</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Stream.html'
+                                  title='ffmpeg::Stream'>Stream</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.StreamMut.html'
+                                  title='ffmpeg::StreamMut'>StreamMut</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.init.html'
+                                  title='ffmpeg::init'>init</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "ffmpeg";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

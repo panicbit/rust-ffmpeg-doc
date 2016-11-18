@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AVFilterPad` struct in crate `ffmpeg`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AVFilterPad">
+
+    <title>ffmpeg::ffi::AVFilterPad - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>ffmpeg</a>::<wbr><a href='index.html'>ffi</a></p><script>window.sidebarCurrent = {name: 'AVFilterPad', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>ffmpeg</a>::<wbr><a href='index.html'>ffi</a>::<wbr><a class='struct' href=''>AVFilterPad</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-4277' class='srclink' href='../../ffmpeg_sys/avfilter/filter/struct.AVFilterPad.html?gotosrc=4277' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct AVFilterPad {
+    pub name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a>,
+    pub kind: <a class='enum' href='../../ffmpeg/ffi/enum.AVMediaType.html' title='ffmpeg::ffi::AVMediaType'>AVMediaType</a>,
+    pub min_perms: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub rej_perms: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub start_frame: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterBufferRef.html' title='ffmpeg::ffi::AVFilterBufferRef'>AVFilterBufferRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;,
+    pub get_video_buffer: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFrame.html' title='ffmpeg::ffi::AVFrame'>AVFrame</a>&gt;,
+    pub get_audio_buffer: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFrame.html' title='ffmpeg::ffi::AVFrame'>AVFrame</a>&gt;,
+    pub end_frame: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;,
+    pub draw_slice: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;,
+    pub filter_frame: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFrame.html' title='ffmpeg::ffi::AVFrame'>AVFrame</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub poll_frame: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub request_frame: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub config_props: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub needs_fifo: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub needs_writable: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+}</pre><h2 class='fields'>Fields</h2><span id='structfield.name' class='structfield'>
+                           <span id='name.v' class='invisible'>
+                           <code>name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.kind' class='structfield'>
+                           <span id='kind.v' class='invisible'>
+                           <code>kind: <a class='enum' href='../../ffmpeg/ffi/enum.AVMediaType.html' title='ffmpeg::ffi::AVMediaType'>AVMediaType</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.min_perms' class='structfield'>
+                           <span id='min_perms.v' class='invisible'>
+                           <code>min_perms: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.rej_perms' class='structfield'>
+                           <span id='rej_perms.v' class='invisible'>
+                           <code>rej_perms: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.start_frame' class='structfield'>
+                           <span id='start_frame.v' class='invisible'>
+                           <code>start_frame: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterBufferRef.html' title='ffmpeg::ffi::AVFilterBufferRef'>AVFilterBufferRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;</code>
+                           </span></span><span class='stab '></span><span id='structfield.get_video_buffer' class='structfield'>
+                           <span id='get_video_buffer.v' class='invisible'>
+                           <code>get_video_buffer: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFrame.html' title='ffmpeg::ffi::AVFrame'>AVFrame</a>&gt;</code>
+                           </span></span><span class='stab '></span><span id='structfield.get_audio_buffer' class='structfield'>
+                           <span id='get_audio_buffer.v' class='invisible'>
+                           <code>get_audio_buffer: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFrame.html' title='ffmpeg::ffi::AVFrame'>AVFrame</a>&gt;</code>
+                           </span></span><span class='stab '></span><span id='structfield.end_frame' class='structfield'>
+                           <span id='end_frame.v' class='invisible'>
+                           <code>end_frame: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;</code>
+                           </span></span><span class='stab '></span><span id='structfield.draw_slice' class='structfield'>
+                           <span id='draw_slice.v' class='invisible'>
+                           <code>draw_slice: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;</code>
+                           </span></span><span class='stab '></span><span id='structfield.filter_frame' class='structfield'>
+                           <span id='filter_frame.v' class='invisible'>
+                           <code>filter_frame: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFrame.html' title='ffmpeg::ffi::AVFrame'>AVFrame</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.poll_frame' class='structfield'>
+                           <span id='poll_frame.v' class='invisible'>
+                           <code>poll_frame: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.request_frame' class='structfield'>
+                           <span id='request_frame.v' class='invisible'>
+                           <code>request_frame: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.config_props' class='structfield'>
+                           <span id='config_props.v' class='invisible'>
+                           <code>config_props: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../ffmpeg/ffi/struct.AVFilterLink.html' title='ffmpeg::ffi::AVFilterLink'>AVFilterLink</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.needs_fifo' class='structfield'>
+                           <span id='needs_fifo.v' class='invisible'>
+                           <code>needs_fifo: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.needs_writable' class='structfield'>
+                           <span id='needs_writable.v' class='invisible'>
+                           <code>needs_writable: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code>
+                           </span></span><span class='stab '></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "ffmpeg";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

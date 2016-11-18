@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AVFilterContext` struct in crate `ffmpeg_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AVFilterContext">
+
+    <title>ffmpeg_sys::AVFilterContext - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>ffmpeg_sys</a></p><script>window.sidebarCurrent = {name: 'AVFilterContext', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>ffmpeg_sys</a>::<wbr><a class='struct' href=''>AVFilterContext</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-4346' class='srclink' href='../src/ffmpeg_sys/avfilter/filter.rs.html#115-136' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct AVFilterContext {
+    pub av_class: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVClass.html' title='ffmpeg_sys::AVClass'>AVClass</a>,
+    pub filter: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVFilter.html' title='ffmpeg_sys::AVFilter'>AVFilter</a>,
+    pub name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>,
+    pub input_pads: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVFilterPad.html' title='ffmpeg_sys::AVFilterPad'>AVFilterPad</a>,
+    pub inputs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVFilterLink.html' title='ffmpeg_sys::AVFilterLink'>AVFilterLink</a>,
+    pub input_count: <a class='type' href='../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>,
+    pub nb_inputs: <a class='type' href='../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>,
+    pub output_pads: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVFilterPad.html' title='ffmpeg_sys::AVFilterPad'>AVFilterPad</a>,
+    pub outputs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVFilterLink.html' title='ffmpeg_sys::AVFilterLink'>AVFilterLink</a>,
+    pub output_count: <a class='type' href='../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>,
+    pub nb_outputs: <a class='type' href='../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>,
+    pub private: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../libc/enum.c_void.html' title='libc::c_void'>c_void</a>,
+    pub graph: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVFilterGraph.html' title='ffmpeg_sys::AVFilterGraph'>AVFilterGraph</a>,
+    pub thread_type: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub internal: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../ffmpeg_sys/type.AVFilterInternal.html' title='ffmpeg_sys::AVFilterInternal'>AVFilterInternal</a>,
+    pub command_queue: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../ffmpeg_sys/type.AVFilterCommand.html' title='ffmpeg_sys::AVFilterCommand'>AVFilterCommand</a>,
+    pub enable_str: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>,
+    pub enable: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../libc/enum.c_void.html' title='libc::c_void'>c_void</a>,
+    pub var_values: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/type.c_double.html' title='libc::c_double'>c_double</a>,
+    pub is_disabled: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+}</pre><h2 class='fields'>Fields</h2><span id='structfield.av_class' class='structfield'>
+                           <span id='av_class.v' class='invisible'>
+                           <code>av_class: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVClass.html' title='ffmpeg_sys::AVClass'>AVClass</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.filter' class='structfield'>
+                           <span id='filter.v' class='invisible'>
+                           <code>filter: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../ffmpeg_sys/struct.AVFilter.html' title='ffmpeg_sys::AVFilter'>AVFilter</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.name' class='structfield'>
+                           <span id='name.v' class='invisible'>
+                           <code>name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.input_pads' class='structfield'>
+                           <span id='input_pads.v' class='invisible'>
+                           <code>input_pads: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVFilterPad.html' title='ffmpeg_sys::AVFilterPad'>AVFilterPad</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.inputs' class='structfield'>
+                           <span id='inputs.v' class='invisible'>
+                           <code>inputs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVFilterLink.html' title='ffmpeg_sys::AVFilterLink'>AVFilterLink</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.input_count' class='structfield'>
+                           <span id='input_count.v' class='invisible'>
+                           <code>input_count: <a class='type' href='../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.nb_inputs' class='structfield'>
+                           <span id='nb_inputs.v' class='invisible'>
+                           <code>nb_inputs: <a class='type' href='../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.output_pads' class='structfield'>
+                           <span id='output_pads.v' class='invisible'>
+                           <code>output_pads: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVFilterPad.html' title='ffmpeg_sys::AVFilterPad'>AVFilterPad</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.outputs' class='structfield'>
+                           <span id='outputs.v' class='invisible'>
+                           <code>outputs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVFilterLink.html' title='ffmpeg_sys::AVFilterLink'>AVFilterLink</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.output_count' class='structfield'>
+                           <span id='output_count.v' class='invisible'>
+                           <code>output_count: <a class='type' href='../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.nb_outputs' class='structfield'>
+                           <span id='nb_outputs.v' class='invisible'>
+                           <code>nb_outputs: <a class='type' href='../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.private' class='structfield'>
+                           <span id='private.v' class='invisible'>
+                           <code>private: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../libc/enum.c_void.html' title='libc::c_void'>c_void</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.graph' class='structfield'>
+                           <span id='graph.v' class='invisible'>
+                           <code>graph: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVFilterGraph.html' title='ffmpeg_sys::AVFilterGraph'>AVFilterGraph</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.thread_type' class='structfield'>
+                           <span id='thread_type.v' class='invisible'>
+                           <code>thread_type: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.internal' class='structfield'>
+                           <span id='internal.v' class='invisible'>
+                           <code>internal: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../ffmpeg_sys/type.AVFilterInternal.html' title='ffmpeg_sys::AVFilterInternal'>AVFilterInternal</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.command_queue' class='structfield'>
+                           <span id='command_queue.v' class='invisible'>
+                           <code>command_queue: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../ffmpeg_sys/type.AVFilterCommand.html' title='ffmpeg_sys::AVFilterCommand'>AVFilterCommand</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.enable_str' class='structfield'>
+                           <span id='enable_str.v' class='invisible'>
+                           <code>enable_str: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.enable' class='structfield'>
+                           <span id='enable.v' class='invisible'>
+                           <code>enable: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../libc/enum.c_void.html' title='libc::c_void'>c_void</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.var_values' class='structfield'>
+                           <span id='var_values.v' class='invisible'>
+                           <code>var_values: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/type.c_double.html' title='libc::c_double'>c_double</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.is_disabled' class='structfield'>
+                           <span id='is_disabled.v' class='invisible'>
+                           <code>is_disabled: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "ffmpeg_sys";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

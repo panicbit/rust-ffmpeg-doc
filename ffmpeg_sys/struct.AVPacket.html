@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AVPacket` struct in crate `ffmpeg_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AVPacket">
+
+    <title>ffmpeg_sys::AVPacket - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>ffmpeg_sys</a></p><script>window.sidebarCurrent = {name: 'AVPacket', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>ffmpeg_sys</a>::<wbr><a class='struct' href=''>AVPacket</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-2152' class='srclink' href='../src/ffmpeg_sys/avcodec/codec.rs.html#663-680' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct AVPacket {
+    pub buf: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVBufferRef.html' title='ffmpeg_sys::AVBufferRef'>AVBufferRef</a>,
+    pub pts: <a class='type' href='../libc/type.int64_t.html' title='libc::int64_t'>int64_t</a>,
+    pub dts: <a class='type' href='../libc/type.int64_t.html' title='libc::int64_t'>int64_t</a>,
+    pub data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/type.uint8_t.html' title='libc::uint8_t'>uint8_t</a>,
+    pub size: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub stream_index: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub flags: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub side_data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVPacketSideData.html' title='ffmpeg_sys::AVPacketSideData'>AVPacketSideData</a>,
+    pub side_data_elems: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub duration: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub pos: <a class='type' href='../libc/type.int64_t.html' title='libc::int64_t'>int64_t</a>,
+    pub convergence_duration: <a class='type' href='../libc/type.int64_t.html' title='libc::int64_t'>int64_t</a>,
+}</pre><h2 class='fields'>Fields</h2><span id='structfield.buf' class='structfield'>
+                           <span id='buf.v' class='invisible'>
+                           <code>buf: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVBufferRef.html' title='ffmpeg_sys::AVBufferRef'>AVBufferRef</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.pts' class='structfield'>
+                           <span id='pts.v' class='invisible'>
+                           <code>pts: <a class='type' href='../libc/type.int64_t.html' title='libc::int64_t'>int64_t</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.dts' class='structfield'>
+                           <span id='dts.v' class='invisible'>
+                           <code>dts: <a class='type' href='../libc/type.int64_t.html' title='libc::int64_t'>int64_t</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.data' class='structfield'>
+                           <span id='data.v' class='invisible'>
+                           <code>data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../libc/type.uint8_t.html' title='libc::uint8_t'>uint8_t</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.size' class='structfield'>
+                           <span id='size.v' class='invisible'>
+                           <code>size: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.stream_index' class='structfield'>
+                           <span id='stream_index.v' class='invisible'>
+                           <code>stream_index: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.flags' class='structfield'>
+                           <span id='flags.v' class='invisible'>
+                           <code>flags: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.side_data' class='structfield'>
+                           <span id='side_data.v' class='invisible'>
+                           <code>side_data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../ffmpeg_sys/struct.AVPacketSideData.html' title='ffmpeg_sys::AVPacketSideData'>AVPacketSideData</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.side_data_elems' class='structfield'>
+                           <span id='side_data_elems.v' class='invisible'>
+                           <code>side_data_elems: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.duration' class='structfield'>
+                           <span id='duration.v' class='invisible'>
+                           <code>duration: <a class='type' href='../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.pos' class='structfield'>
+                           <span id='pos.v' class='invisible'>
+                           <code>pos: <a class='type' href='../libc/type.int64_t.html' title='libc::int64_t'>int64_t</a></code>
+                           </span></span><span class='stab '></span><span id='structfield.convergence_duration' class='structfield'>
+                           <span id='convergence_duration.v' class='invisible'>
+                           <code>convergence_duration: <a class='type' href='../libc/type.int64_t.html' title='libc::int64_t'>int64_t</a></code>
+                           </span></span><span class='stab '></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "ffmpeg_sys";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

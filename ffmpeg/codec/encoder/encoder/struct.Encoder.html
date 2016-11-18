@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Encoder` struct in crate `ffmpeg`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Encoder">
+
+    <title>ffmpeg::codec::encoder::encoder::Encoder - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../../index.html'>ffmpeg</a>::<wbr><a href='../../index.html'>codec</a>::<wbr><a href='../index.html'>encoder</a>::<wbr><a href='index.html'>encoder</a></p><script>window.sidebarCurrent = {name: 'Encoder', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../index.html'>ffmpeg</a>::<wbr><a href='../../index.html'>codec</a>::<wbr><a href='../index.html'>encoder</a>::<wbr><a href='index.html'>encoder</a>::<wbr><a class='struct' href=''>Encoder</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-3473' class='srclink' href='../../../../src/ffmpeg/src/codec/encoder/encoder.rs.html#8' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Encoder(pub <a class='struct' href='../../../../ffmpeg/codec/context/struct.Context.html' title='ffmpeg::codec::context::Context'>Context</a>);</pre><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../../ffmpeg/codec/encoder/encoder/struct.Encoder.html' title='ffmpeg::codec::encoder::encoder::Encoder'>Encoder</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-3476' class='srclink' href='../../../../src/ffmpeg/src/codec/encoder/encoder.rs.html#10-123' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.video' class='method'><span id='video.v' class='invisible'><code>fn <a href='#method.video' class='fnname'>video</a>(self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../../../ffmpeg/codec/encoder/video/struct.Video.html' title='ffmpeg::codec::encoder::video::Video'>Video</a>, <a class='enum' href='../../../../ffmpeg/util/error/enum.Error.html' title='ffmpeg::util::error::Error'>Error</a>&gt;</code></span></h4>
+<h4 id='method.audio' class='method'><span id='audio.v' class='invisible'><code>fn <a href='#method.audio' class='fnname'>audio</a>(self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../../../ffmpeg/codec/encoder/audio/struct.Audio.html' title='ffmpeg::codec::encoder::audio::Audio'>Audio</a>, <a class='enum' href='../../../../ffmpeg/util/error/enum.Error.html' title='ffmpeg::util::error::Error'>Error</a>&gt;</code></span></h4>
+<h4 id='method.subtitle' class='method'><span id='subtitle.v' class='invisible'><code>fn <a href='#method.subtitle' class='fnname'>subtitle</a>(self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../../../ffmpeg/codec/encoder/subtitle/struct.Subtitle.html' title='ffmpeg::codec::encoder::subtitle::Subtitle'>Subtitle</a>, <a class='enum' href='../../../../ffmpeg/util/error/enum.Error.html' title='ffmpeg::util::error::Error'>Error</a>&gt;</code></span></h4>
+<h4 id='method.set_bit_rate' class='method'><span id='set_bit_rate.v' class='invisible'><code>fn <a href='#method.set_bit_rate' class='fnname'>set_bit_rate</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>)</code></span></h4>
+<h4 id='method.set_max_bit_rate' class='method'><span id='set_max_bit_rate.v' class='invisible'><code>fn <a href='#method.set_max_bit_rate' class='fnname'>set_max_bit_rate</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>)</code></span></h4>
+<h4 id='method.set_tolerance' class='method'><span id='set_tolerance.v' class='invisible'><code>fn <a href='#method.set_tolerance' class='fnname'>set_tolerance</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>)</code></span></h4>
+<h4 id='method.set_quality' class='method'><span id='set_quality.v' class='invisible'><code>fn <a href='#method.set_quality' class='fnname'>set_quality</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>)</code></span></h4>
+<h4 id='method.set_compression' class='method'><span id='set_compression.v' class='invisible'><code>fn <a href='#method.set_compression' class='fnname'>set_compression</a>(&amp;mut self, value: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt;)</code></span></h4>
+<h4 id='method.set_time_base' class='method'><span id='set_time_base.v' class='invisible'><code>fn <a href='#method.set_time_base' class='fnname'>set_time_base</a>&lt;R:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='../../../../ffmpeg/util/rational/struct.Rational.html' title='ffmpeg::util::rational::Rational'>Rational</a>&gt;&gt;(&amp;mut self, value: R)</code></span></h4>
+<h4 id='method.set_frame_rate' class='method'><span id='set_frame_rate.v' class='invisible'><code>fn <a href='#method.set_frame_rate' class='fnname'>set_frame_rate</a>&lt;R:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='../../../../ffmpeg/util/rational/struct.Rational.html' title='ffmpeg::util::rational::Rational'>Rational</a>&gt;&gt;(&amp;mut self, value: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;R&gt;)</code></span></h4>
+</div><h2 id='deref-methods'>Methods from <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a>&lt;Target=<a class='struct' href='../../../../ffmpeg/codec/context/struct.Context.html' title='ffmpeg::codec::context::Context'>Context</a>&gt;</h2><div class='impl-items'><h4 id='method.as_ptr' class='method'><span id='as_ptr.v' class='invisible'><code>unsafe fn <a href='#method.as_ptr' class='fnname'>as_ptr</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../../../ffmpeg/ffi/struct.AVCodecContext.html' title='ffmpeg::ffi::AVCodecContext'>AVCodecContext</a></code></span></h4>
+<h4 id='method.as_mut_ptr' class='method'><span id='as_mut_ptr.v' class='invisible'><code>unsafe fn <a href='#method.as_mut_ptr' class='fnname'>as_mut_ptr</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../../ffmpeg/ffi/struct.AVCodecContext.html' title='ffmpeg::ffi::AVCodecContext'>AVCodecContext</a></code></span></h4>
+</div><div class='impl-items'><h4 id='method.decoder' class='method'><span id='decoder.v' class='invisible'><code>fn <a href='#method.decoder' class='fnname'>decoder</a>(self) -&gt; <a class='struct' href='../../../../ffmpeg/codec/decoder/decoder/struct.Decoder.html' title='ffmpeg::codec::decoder::decoder::Decoder'>Decoder</a></code></span></h4>
+<h4 id='method.encoder' class='method'><span id='encoder.v' class='invisible'><code>fn <a href='#method.encoder' class='fnname'>encoder</a>(self) -&gt; <a class='struct' href='../../../../ffmpeg/codec/encoder/encoder/struct.Encoder.html' title='ffmpeg::codec::encoder::encoder::Encoder'>Encoder</a></code></span></h4>
+<h4 id='method.codec' class='method'><span id='codec.v' class='invisible'><code>fn <a href='#method.codec' class='fnname'>codec</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../../../ffmpeg/codec/codec/struct.Codec.html' title='ffmpeg::codec::codec::Codec'>Codec</a>&gt;</code></span></h4>
+<h4 id='method.medium' class='method'><span id='medium.v' class='invisible'><code>fn <a href='#method.medium' class='fnname'>medium</a>(&amp;self) -&gt; <a class='enum' href='../../../../ffmpeg/util/media/enum.Type.html' title='ffmpeg::util::media::Type'>Type</a></code></span></h4>
+<h4 id='method.set_flags' class='method'><span id='set_flags.v' class='invisible'><code>fn <a href='#method.set_flags' class='fnname'>set_flags</a>(&amp;mut self, value: <a class='struct' href='../../../../ffmpeg/codec/flag/struct.Flags.html' title='ffmpeg::codec::flag::Flags'>Flags</a>)</code></span></h4>
+<h4 id='method.id' class='method'><span id='id.v' class='invisible'><code>fn <a href='#method.id' class='fnname'>id</a>(&amp;self) -&gt; <a class='enum' href='../../../../ffmpeg/codec/id/enum.Id.html' title='ffmpeg::codec::id::Id'>Id</a></code></span></h4>
+<h4 id='method.compliance' class='method'><span id='compliance.v' class='invisible'><code>fn <a href='#method.compliance' class='fnname'>compliance</a>(&amp;mut self, value: <a class='enum' href='../../../../ffmpeg/codec/compliance/enum.Compliance.html' title='ffmpeg::codec::compliance::Compliance'>Compliance</a>)</code></span></h4>
+<h4 id='method.debug' class='method'><span id='debug.v' class='invisible'><code>fn <a href='#method.debug' class='fnname'>debug</a>(&amp;mut self, value: <a class='struct' href='../../../../ffmpeg/codec/debug/struct.Debug.html' title='ffmpeg::codec::debug::Debug'>Debug</a>)</code></span></h4>
+<h4 id='method.set_threading' class='method'><span id='set_threading.v' class='invisible'><code>fn <a href='#method.set_threading' class='fnname'>set_threading</a>(&amp;mut self, config: <a class='struct' href='../../../../ffmpeg/codec/threading/struct.Config.html' title='ffmpeg::codec::threading::Config'>Config</a>)</code></span></h4>
+<h4 id='method.threading' class='method'><span id='threading.v' class='invisible'><code>fn <a href='#method.threading' class='fnname'>threading</a>(&amp;self) -&gt; <a class='struct' href='../../../../ffmpeg/codec/threading/struct.Config.html' title='ffmpeg::codec::threading::Config'>Config</a></code></span></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a> for <a class='struct' href='../../../../ffmpeg/codec/encoder/encoder/struct.Encoder.html' title='ffmpeg::codec::encoder::encoder::Encoder'>Encoder</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-3508' class='srclink' href='../../../../src/ffmpeg/src/codec/encoder/encoder.rs.html#125-131' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Target' class='type'><span id='Target.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html#associatedtype.Target' class='type'>Target</a> = <a class='struct' href='../../../../ffmpeg/codec/context/struct.Context.html' title='ffmpeg::codec::context::Context'>Context</a></code></span></h4>
+<div class='docblock'><p>The resulting type after dereferencing</p>
+</div><h4 id='method.deref' class='method'><span id='deref.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html#tymethod.deref' class='fnname'>deref</a>(&amp;self) -&gt; &amp;Self::Target</code></span></h4>
+<div class='docblock'><p>The method called to dereference a value</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.DerefMut.html' title='core::ops::DerefMut'>DerefMut</a> for <a class='struct' href='../../../../ffmpeg/codec/encoder/encoder/struct.Encoder.html' title='ffmpeg::codec::encoder::encoder::Encoder'>Encoder</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-3512' class='srclink' href='../../../../src/ffmpeg/src/codec/encoder/encoder.rs.html#133-137' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deref_mut' class='method'><span id='deref_mut.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.DerefMut.html#tymethod.deref_mut' class='fnname'>deref_mut</a>(&amp;mut self) -&gt; &amp;mut Self::Target</code></span></h4>
+<div class='docblock'><p>The method called to mutably dereference a value</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "ffmpeg";
+    </script>
+    <script src="../../../../jquery.js"></script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

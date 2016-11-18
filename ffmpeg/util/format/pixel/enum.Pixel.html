@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Pixel` enum in crate `ffmpeg`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Pixel">
+
+    <title>ffmpeg::util::format::pixel::Pixel - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../../index.html'>ffmpeg</a>::<wbr><a href='../../index.html'>util</a>::<wbr><a href='../index.html'>format</a>::<wbr><a href='index.html'>pixel</a></p><script>window.sidebarCurrent = {name: 'Pixel', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../../../index.html'>ffmpeg</a>::<wbr><a href='../../index.html'>util</a>::<wbr><a href='../index.html'>format</a>::<wbr><a href='index.html'>pixel</a>::<wbr><a class='enum' href=''>Pixel</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-5392' class='srclink' href='../../../../src/ffmpeg/src/util/format/pixel.rs.html#4-288' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Pixel {
+    None,
+    YUV420P,
+    YUYV422,
+    RGB24,
+    BGR24,
+    YUV422P,
+    YUV444P,
+    YUV410P,
+    YUV411P,
+    GRAY8,
+    MonoWhite,
+    MonoBlack,
+    PAL8,
+    YUVJ420P,
+    YUVJ422P,
+    YUVJ444P,
+    XVMC_MPEG2_MC,
+    XVMC_MPEG2_IDCT,
+    UYVY422,
+    UYYVYY411,
+    BGR8,
+    BGR4,
+    BGR4_BYTE,
+    RGB8,
+    RGB4,
+    RGB4_BYTE,
+    NV12,
+    NV21,
+    ARGB,
+    RGBA,
+    ABGR,
+    BGRA,
+    GRAY16BE,
+    GRAY16LE,
+    YUV440P,
+    YUVJ440P,
+    YUVA420P,
+    VDPAU_H264,
+    VDPAU_MPEG1,
+    VDPAU_MPEG2,
+    VDPAU_WMV3,
+    VDPAU_VC1,
+    RGB48BE,
+    RGB48LE,
+    RGB565BE,
+    RGB565LE,
+    RGB555BE,
+    RGB555LE,
+    BGR565BE,
+    BGR565LE,
+    BGR555BE,
+    BGR555LE,
+    VAAPI_MOCO,
+    VAAPI_IDCT,
+    VAAPI_VLD,
+    YUV420P16LE,
+    YUV420P16BE,
+    YUV422P16LE,
+    YUV422P16BE,
+    YUV444P16LE,
+    YUV444P16BE,
+    VDPAU_MPEG4,
+    DXVA2_VLD,
+    RGB444LE,
+    RGB444BE,
+    BGR444LE,
+    BGR444BE,
+    YA8,
+    BGR48BE,
+    BGR48LE,
+    YUV420P9BE,
+    YUV420P9LE,
+    YUV420P10BE,
+    YUV420P10LE,
+    YUV422P10BE,
+    YUV422P10LE,
+    YUV444P9BE,
+    YUV444P9LE,
+    YUV444P10BE,
+    YUV444P10LE,
+    YUV422P9BE,
+    YUV422P9LE,
+    VDA_VLD,
+    GBRP,
+    GBRP9BE,
+    GBRP9LE,
+    GBRP10BE,
+    GBRP10LE,
+    GBRP16BE,
+    GBRP16LE,
+    YUVA422P_LIBAV,
+    YUVA444P_LIBAV,
+    YUVA420P9BE,
+    YUVA420P9LE,
+    YUVA422P9BE,
+    YUVA422P9LE,
+    YUVA444P9BE,
+    YUVA444P9LE,
+    YUVA420P10BE,
+    YUVA420P10LE,
+    YUVA422P10BE,
+    YUVA422P10LE,
+    YUVA444P10BE,
+    YUVA444P10LE,
+    YUVA420P16BE,
+    YUVA420P16LE,
+    YUVA422P16BE,
+    YUVA422P16LE,
+    YUVA444P16BE,
+    YUVA444P16LE,
+    VDPAU,
+    XYZ12LE,
+    XYZ12BE,
+    NV16,
+    NV20LE,
+    NV20BE,
+    RGBA64BE_LIBAV,
+    RGBA64LE_LIBAV,
+    BGRA64BE_LIBAV,
+    BGRA64LE_LIBAV,
+    YVYU422,
+    VDA,
+    YA16BE,
+    YA16LE,
+    GBRAP_LIBAV,
+    GBRAP16BE_LIBAV,
+    GBRAP16LE_LIBAV,
+    QSV,
+    MMAL,
+    D3D11VA_VLD,
+    ZRGB,
+    RGBZ,
+    ZBGR,
+    BGRZ,
+    YUVA444P,
+    YUVA422P,
+    YUV420P12BE,
+    YUV420P12LE,
+    YUV420P14BE,
+    YUV420P14LE,
+    YUV422P12BE,
+    YUV422P12LE,
+    YUV422P14BE,
+    YUV422P14LE,
+    YUV444P12BE,
+    YUV444P12LE,
+    YUV444P14BE,
+    YUV444P14LE,
+    GBRP12BE,
+    GBRP12LE,
+    GBRP14BE,
+    GBRP14LE,
+    GBRAP,
+    GBRAP16BE,
+    GBRAP16LE,
+    YUVJ411P,
+    BAYER_BGGR8,
+    BAYER_RGGB8,
+    BAYER_GBRG8,
+    BAYER_GRBG8,
+    BAYER_BGGR16LE,
+    BAYER_BGGR16BE,
+    BAYER_RGGB16LE,
+    BAYER_RGGB16BE,
+    BAYER_GBRG16LE,
+    BAYER_GBRG16BE,
+    BAYER_GRBG16LE,
+    BAYER_GRBG16BE,
+    YUV440P10LE,
+    YUV440P10BE,
+    YUV440P12LE,
+    YUV440P12BE,
+    AYUV64LE,
+    AYUV64BE,
+    VIDEOTOOLBOX,
+    XVMC,
+    Y400A,
+    GRAY8A,
+    GBR24P,
+    RGB32,
+    RGB32_1,
+    BGR32,
+    BGR32_1,
+    ZRGB32,
+    ZBGR32,
+    GRAY16,
+    YA16,
+    RGB48,
+    RGB565,
+    RGB555,
+    RGB444,
+    BGR48,
+    BGR565,
+    BGR555,
+    BGR444,
+    YUV420P9,
+    YUV422P9,
+    YUV444P9,
+    YUV420P10,
+    YUV422P10,
+    YUV440P10,
+    YUV444P10,
+    YUV420P12,
+    YUV422P12,
+    YUV440P12,
+    YUV444P12,
+    YUV420P14,
+    YUV422P14,
+    YUV444P14,
+    YUV420P16,
+    YUV422P16,
+    YUV444P16,
+    GBRP9,
+    GBRP10,
+    GBRP12,
+    GBRP14,
+    GBRP16,
+    GBRAP16,
+    BAYER_BGGR16,
+    BAYER_RGGB16,
+    BAYER_GBRG16,
+    BAYER_GRBG16,
+    YUVA420P9,
+    YUVA422P9,
+    YUVA444P9,
+    YUVA420P10,
+    YUVA422P10,
+    YUVA444P10,
+    YUVA420P16,
+    YUVA422P16,
+    YUVA444P16,
+    XYZ12,
+    NV20,
+    AYUV64,
+}</pre><h2 class='variants'>Variants</h2>
+<span id='variant.None' class='variant'><span id='None.v' class='invisible'><code>None</code></span></span><span id='variant.YUV420P' class='variant'><span id='YUV420P.v' class='invisible'><code>YUV420P</code></span></span><span id='variant.YUYV422' class='variant'><span id='YUYV422.v' class='invisible'><code>YUYV422</code></span></span><span id='variant.RGB24' class='variant'><span id='RGB24.v' class='invisible'><code>RGB24</code></span></span><span id='variant.BGR24' class='variant'><span id='BGR24.v' class='invisible'><code>BGR24</code></span></span><span id='variant.YUV422P' class='variant'><span id='YUV422P.v' class='invisible'><code>YUV422P</code></span></span><span id='variant.YUV444P' class='variant'><span id='YUV444P.v' class='invisible'><code>YUV444P</code></span></span><span id='variant.YUV410P' class='variant'><span id='YUV410P.v' class='invisible'><code>YUV410P</code></span></span><span id='variant.YUV411P' class='variant'><span id='YUV411P.v' class='invisible'><code>YUV411P</code></span></span><span id='variant.GRAY8' class='variant'><span id='GRAY8.v' class='invisible'><code>GRAY8</code></span></span><span id='variant.MonoWhite' class='variant'><span id='MonoWhite.v' class='invisible'><code>MonoWhite</code></span></span><span id='variant.MonoBlack' class='variant'><span id='MonoBlack.v' class='invisible'><code>MonoBlack</code></span></span><span id='variant.PAL8' class='variant'><span id='PAL8.v' class='invisible'><code>PAL8</code></span></span><span id='variant.YUVJ420P' class='variant'><span id='YUVJ420P.v' class='invisible'><code>YUVJ420P</code></span></span><span id='variant.YUVJ422P' class='variant'><span id='YUVJ422P.v' class='invisible'><code>YUVJ422P</code></span></span><span id='variant.YUVJ444P' class='variant'><span id='YUVJ444P.v' class='invisible'><code>YUVJ444P</code></span></span><span id='variant.XVMC_MPEG2_MC' class='variant'><span id='XVMC_MPEG2_MC.v' class='invisible'><code>XVMC_MPEG2_MC</code></span></span><span id='variant.XVMC_MPEG2_IDCT' class='variant'><span id='XVMC_MPEG2_IDCT.v' class='invisible'><code>XVMC_MPEG2_IDCT</code></span></span><span id='variant.UYVY422' class='variant'><span id='UYVY422.v' class='invisible'><code>UYVY422</code></span></span><span id='variant.UYYVYY411' class='variant'><span id='UYYVYY411.v' class='invisible'><code>UYYVYY411</code></span></span><span id='variant.BGR8' class='variant'><span id='BGR8.v' class='invisible'><code>BGR8</code></span></span><span id='variant.BGR4' class='variant'><span id='BGR4.v' class='invisible'><code>BGR4</code></span></span><span id='variant.BGR4_BYTE' class='variant'><span id='BGR4_BYTE.v' class='invisible'><code>BGR4_BYTE</code></span></span><span id='variant.RGB8' class='variant'><span id='RGB8.v' class='invisible'><code>RGB8</code></span></span><span id='variant.RGB4' class='variant'><span id='RGB4.v' class='invisible'><code>RGB4</code></span></span><span id='variant.RGB4_BYTE' class='variant'><span id='RGB4_BYTE.v' class='invisible'><code>RGB4_BYTE</code></span></span><span id='variant.NV12' class='variant'><span id='NV12.v' class='invisible'><code>NV12</code></span></span><span id='variant.NV21' class='variant'><span id='NV21.v' class='invisible'><code>NV21</code></span></span><span id='variant.ARGB' class='variant'><span id='ARGB.v' class='invisible'><code>ARGB</code></span></span><span id='variant.RGBA' class='variant'><span id='RGBA.v' class='invisible'><code>RGBA</code></span></span><span id='variant.ABGR' class='variant'><span id='ABGR.v' class='invisible'><code>ABGR</code></span></span><span id='variant.BGRA' class='variant'><span id='BGRA.v' class='invisible'><code>BGRA</code></span></span><span id='variant.GRAY16BE' class='variant'><span id='GRAY16BE.v' class='invisible'><code>GRAY16BE</code></span></span><span id='variant.GRAY16LE' class='variant'><span id='GRAY16LE.v' class='invisible'><code>GRAY16LE</code></span></span><span id='variant.YUV440P' class='variant'><span id='YUV440P.v' class='invisible'><code>YUV440P</code></span></span><span id='variant.YUVJ440P' class='variant'><span id='YUVJ440P.v' class='invisible'><code>YUVJ440P</code></span></span><span id='variant.YUVA420P' class='variant'><span id='YUVA420P.v' class='invisible'><code>YUVA420P</code></span></span><span id='variant.VDPAU_H264' class='variant'><span id='VDPAU_H264.v' class='invisible'><code>VDPAU_H264</code></span></span><span id='variant.VDPAU_MPEG1' class='variant'><span id='VDPAU_MPEG1.v' class='invisible'><code>VDPAU_MPEG1</code></span></span><span id='variant.VDPAU_MPEG2' class='variant'><span id='VDPAU_MPEG2.v' class='invisible'><code>VDPAU_MPEG2</code></span></span><span id='variant.VDPAU_WMV3' class='variant'><span id='VDPAU_WMV3.v' class='invisible'><code>VDPAU_WMV3</code></span></span><span id='variant.VDPAU_VC1' class='variant'><span id='VDPAU_VC1.v' class='invisible'><code>VDPAU_VC1</code></span></span><span id='variant.RGB48BE' class='variant'><span id='RGB48BE.v' class='invisible'><code>RGB48BE</code></span></span><span id='variant.RGB48LE' class='variant'><span id='RGB48LE.v' class='invisible'><code>RGB48LE</code></span></span><span id='variant.RGB565BE' class='variant'><span id='RGB565BE.v' class='invisible'><code>RGB565BE</code></span></span><span id='variant.RGB565LE' class='variant'><span id='RGB565LE.v' class='invisible'><code>RGB565LE</code></span></span><span id='variant.RGB555BE' class='variant'><span id='RGB555BE.v' class='invisible'><code>RGB555BE</code></span></span><span id='variant.RGB555LE' class='variant'><span id='RGB555LE.v' class='invisible'><code>RGB555LE</code></span></span><span id='variant.BGR565BE' class='variant'><span id='BGR565BE.v' class='invisible'><code>BGR565BE</code></span></span><span id='variant.BGR565LE' class='variant'><span id='BGR565LE.v' class='invisible'><code>BGR565LE</code></span></span><span id='variant.BGR555BE' class='variant'><span id='BGR555BE.v' class='invisible'><code>BGR555BE</code></span></span><span id='variant.BGR555LE' class='variant'><span id='BGR555LE.v' class='invisible'><code>BGR555LE</code></span></span><span id='variant.VAAPI_MOCO' class='variant'><span id='VAAPI_MOCO.v' class='invisible'><code>VAAPI_MOCO</code></span></span><span id='variant.VAAPI_IDCT' class='variant'><span id='VAAPI_IDCT.v' class='invisible'><code>VAAPI_IDCT</code></span></span><span id='variant.VAAPI_VLD' class='variant'><span id='VAAPI_VLD.v' class='invisible'><code>VAAPI_VLD</code></span></span><span id='variant.YUV420P16LE' class='variant'><span id='YUV420P16LE.v' class='invisible'><code>YUV420P16LE</code></span></span><span id='variant.YUV420P16BE' class='variant'><span id='YUV420P16BE.v' class='invisible'><code>YUV420P16BE</code></span></span><span id='variant.YUV422P16LE' class='variant'><span id='YUV422P16LE.v' class='invisible'><code>YUV422P16LE</code></span></span><span id='variant.YUV422P16BE' class='variant'><span id='YUV422P16BE.v' class='invisible'><code>YUV422P16BE</code></span></span><span id='variant.YUV444P16LE' class='variant'><span id='YUV444P16LE.v' class='invisible'><code>YUV444P16LE</code></span></span><span id='variant.YUV444P16BE' class='variant'><span id='YUV444P16BE.v' class='invisible'><code>YUV444P16BE</code></span></span><span id='variant.VDPAU_MPEG4' class='variant'><span id='VDPAU_MPEG4.v' class='invisible'><code>VDPAU_MPEG4</code></span></span><span id='variant.DXVA2_VLD' class='variant'><span id='DXVA2_VLD.v' class='invisible'><code>DXVA2_VLD</code></span></span><span id='variant.RGB444LE' class='variant'><span id='RGB444LE.v' class='invisible'><code>RGB444LE</code></span></span><span id='variant.RGB444BE' class='variant'><span id='RGB444BE.v' class='invisible'><code>RGB444BE</code></span></span><span id='variant.BGR444LE' class='variant'><span id='BGR444LE.v' class='invisible'><code>BGR444LE</code></span></span><span id='variant.BGR444BE' class='variant'><span id='BGR444BE.v' class='invisible'><code>BGR444BE</code></span></span><span id='variant.YA8' class='variant'><span id='YA8.v' class='invisible'><code>YA8</code></span></span><span id='variant.BGR48BE' class='variant'><span id='BGR48BE.v' class='invisible'><code>BGR48BE</code></span></span><span id='variant.BGR48LE' class='variant'><span id='BGR48LE.v' class='invisible'><code>BGR48LE</code></span></span><span id='variant.YUV420P9BE' class='variant'><span id='YUV420P9BE.v' class='invisible'><code>YUV420P9BE</code></span></span><span id='variant.YUV420P9LE' class='variant'><span id='YUV420P9LE.v' class='invisible'><code>YUV420P9LE</code></span></span><span id='variant.YUV420P10BE' class='variant'><span id='YUV420P10BE.v' class='invisible'><code>YUV420P10BE</code></span></span><span id='variant.YUV420P10LE' class='variant'><span id='YUV420P10LE.v' class='invisible'><code>YUV420P10LE</code></span></span><span id='variant.YUV422P10BE' class='variant'><span id='YUV422P10BE.v' class='invisible'><code>YUV422P10BE</code></span></span><span id='variant.YUV422P10LE' class='variant'><span id='YUV422P10LE.v' class='invisible'><code>YUV422P10LE</code></span></span><span id='variant.YUV444P9BE' class='variant'><span id='YUV444P9BE.v' class='invisible'><code>YUV444P9BE</code></span></span><span id='variant.YUV444P9LE' class='variant'><span id='YUV444P9LE.v' class='invisible'><code>YUV444P9LE</code></span></span><span id='variant.YUV444P10BE' class='variant'><span id='YUV444P10BE.v' class='invisible'><code>YUV444P10BE</code></span></span><span id='variant.YUV444P10LE' class='variant'><span id='YUV444P10LE.v' class='invisible'><code>YUV444P10LE</code></span></span><span id='variant.YUV422P9BE' class='variant'><span id='YUV422P9BE.v' class='invisible'><code>YUV422P9BE</code></span></span><span id='variant.YUV422P9LE' class='variant'><span id='YUV422P9LE.v' class='invisible'><code>YUV422P9LE</code></span></span><span id='variant.VDA_VLD' class='variant'><span id='VDA_VLD.v' class='invisible'><code>VDA_VLD</code></span></span><span id='variant.GBRP' class='variant'><span id='GBRP.v' class='invisible'><code>GBRP</code></span></span><span id='variant.GBRP9BE' class='variant'><span id='GBRP9BE.v' class='invisible'><code>GBRP9BE</code></span></span><span id='variant.GBRP9LE' class='variant'><span id='GBRP9LE.v' class='invisible'><code>GBRP9LE</code></span></span><span id='variant.GBRP10BE' class='variant'><span id='GBRP10BE.v' class='invisible'><code>GBRP10BE</code></span></span><span id='variant.GBRP10LE' class='variant'><span id='GBRP10LE.v' class='invisible'><code>GBRP10LE</code></span></span><span id='variant.GBRP16BE' class='variant'><span id='GBRP16BE.v' class='invisible'><code>GBRP16BE</code></span></span><span id='variant.GBRP16LE' class='variant'><span id='GBRP16LE.v' class='invisible'><code>GBRP16LE</code></span></span><span id='variant.YUVA422P_LIBAV' class='variant'><span id='YUVA422P_LIBAV.v' class='invisible'><code>YUVA422P_LIBAV</code></span></span><span id='variant.YUVA444P_LIBAV' class='variant'><span id='YUVA444P_LIBAV.v' class='invisible'><code>YUVA444P_LIBAV</code></span></span><span id='variant.YUVA420P9BE' class='variant'><span id='YUVA420P9BE.v' class='invisible'><code>YUVA420P9BE</code></span></span><span id='variant.YUVA420P9LE' class='variant'><span id='YUVA420P9LE.v' class='invisible'><code>YUVA420P9LE</code></span></span><span id='variant.YUVA422P9BE' class='variant'><span id='YUVA422P9BE.v' class='invisible'><code>YUVA422P9BE</code></span></span><span id='variant.YUVA422P9LE' class='variant'><span id='YUVA422P9LE.v' class='invisible'><code>YUVA422P9LE</code></span></span><span id='variant.YUVA444P9BE' class='variant'><span id='YUVA444P9BE.v' class='invisible'><code>YUVA444P9BE</code></span></span><span id='variant.YUVA444P9LE' class='variant'><span id='YUVA444P9LE.v' class='invisible'><code>YUVA444P9LE</code></span></span><span id='variant.YUVA420P10BE' class='variant'><span id='YUVA420P10BE.v' class='invisible'><code>YUVA420P10BE</code></span></span><span id='variant.YUVA420P10LE' class='variant'><span id='YUVA420P10LE.v' class='invisible'><code>YUVA420P10LE</code></span></span><span id='variant.YUVA422P10BE' class='variant'><span id='YUVA422P10BE.v' class='invisible'><code>YUVA422P10BE</code></span></span><span id='variant.YUVA422P10LE' class='variant'><span id='YUVA422P10LE.v' class='invisible'><code>YUVA422P10LE</code></span></span><span id='variant.YUVA444P10BE' class='variant'><span id='YUVA444P10BE.v' class='invisible'><code>YUVA444P10BE</code></span></span><span id='variant.YUVA444P10LE' class='variant'><span id='YUVA444P10LE.v' class='invisible'><code>YUVA444P10LE</code></span></span><span id='variant.YUVA420P16BE' class='variant'><span id='YUVA420P16BE.v' class='invisible'><code>YUVA420P16BE</code></span></span><span id='variant.YUVA420P16LE' class='variant'><span id='YUVA420P16LE.v' class='invisible'><code>YUVA420P16LE</code></span></span><span id='variant.YUVA422P16BE' class='variant'><span id='YUVA422P16BE.v' class='invisible'><code>YUVA422P16BE</code></span></span><span id='variant.YUVA422P16LE' class='variant'><span id='YUVA422P16LE.v' class='invisible'><code>YUVA422P16LE</code></span></span><span id='variant.YUVA444P16BE' class='variant'><span id='YUVA444P16BE.v' class='invisible'><code>YUVA444P16BE</code></span></span><span id='variant.YUVA444P16LE' class='variant'><span id='YUVA444P16LE.v' class='invisible'><code>YUVA444P16LE</code></span></span><span id='variant.VDPAU' class='variant'><span id='VDPAU.v' class='invisible'><code>VDPAU</code></span></span><span id='variant.XYZ12LE' class='variant'><span id='XYZ12LE.v' class='invisible'><code>XYZ12LE</code></span></span><span id='variant.XYZ12BE' class='variant'><span id='XYZ12BE.v' class='invisible'><code>XYZ12BE</code></span></span><span id='variant.NV16' class='variant'><span id='NV16.v' class='invisible'><code>NV16</code></span></span><span id='variant.NV20LE' class='variant'><span id='NV20LE.v' class='invisible'><code>NV20LE</code></span></span><span id='variant.NV20BE' class='variant'><span id='NV20BE.v' class='invisible'><code>NV20BE</code></span></span><span id='variant.RGBA64BE_LIBAV' class='variant'><span id='RGBA64BE_LIBAV.v' class='invisible'><code>RGBA64BE_LIBAV</code></span></span><span id='variant.RGBA64LE_LIBAV' class='variant'><span id='RGBA64LE_LIBAV.v' class='invisible'><code>RGBA64LE_LIBAV</code></span></span><span id='variant.BGRA64BE_LIBAV' class='variant'><span id='BGRA64BE_LIBAV.v' class='invisible'><code>BGRA64BE_LIBAV</code></span></span><span id='variant.BGRA64LE_LIBAV' class='variant'><span id='BGRA64LE_LIBAV.v' class='invisible'><code>BGRA64LE_LIBAV</code></span></span><span id='variant.YVYU422' class='variant'><span id='YVYU422.v' class='invisible'><code>YVYU422</code></span></span><span id='variant.VDA' class='variant'><span id='VDA.v' class='invisible'><code>VDA</code></span></span><span id='variant.YA16BE' class='variant'><span id='YA16BE.v' class='invisible'><code>YA16BE</code></span></span><span id='variant.YA16LE' class='variant'><span id='YA16LE.v' class='invisible'><code>YA16LE</code></span></span><span id='variant.GBRAP_LIBAV' class='variant'><span id='GBRAP_LIBAV.v' class='invisible'><code>GBRAP_LIBAV</code></span></span><span id='variant.GBRAP16BE_LIBAV' class='variant'><span id='GBRAP16BE_LIBAV.v' class='invisible'><code>GBRAP16BE_LIBAV</code></span></span><span id='variant.GBRAP16LE_LIBAV' class='variant'><span id='GBRAP16LE_LIBAV.v' class='invisible'><code>GBRAP16LE_LIBAV</code></span></span><span id='variant.QSV' class='variant'><span id='QSV.v' class='invisible'><code>QSV</code></span></span><span id='variant.MMAL' class='variant'><span id='MMAL.v' class='invisible'><code>MMAL</code></span></span><span id='variant.D3D11VA_VLD' class='variant'><span id='D3D11VA_VLD.v' class='invisible'><code>D3D11VA_VLD</code></span></span><span id='variant.ZRGB' class='variant'><span id='ZRGB.v' class='invisible'><code>ZRGB</code></span></span><span id='variant.RGBZ' class='variant'><span id='RGBZ.v' class='invisible'><code>RGBZ</code></span></span><span id='variant.ZBGR' class='variant'><span id='ZBGR.v' class='invisible'><code>ZBGR</code></span></span><span id='variant.BGRZ' class='variant'><span id='BGRZ.v' class='invisible'><code>BGRZ</code></span></span><span id='variant.YUVA444P' class='variant'><span id='YUVA444P.v' class='invisible'><code>YUVA444P</code></span></span><span id='variant.YUVA422P' class='variant'><span id='YUVA422P.v' class='invisible'><code>YUVA422P</code></span></span><span id='variant.YUV420P12BE' class='variant'><span id='YUV420P12BE.v' class='invisible'><code>YUV420P12BE</code></span></span><span id='variant.YUV420P12LE' class='variant'><span id='YUV420P12LE.v' class='invisible'><code>YUV420P12LE</code></span></span><span id='variant.YUV420P14BE' class='variant'><span id='YUV420P14BE.v' class='invisible'><code>YUV420P14BE</code></span></span><span id='variant.YUV420P14LE' class='variant'><span id='YUV420P14LE.v' class='invisible'><code>YUV420P14LE</code></span></span><span id='variant.YUV422P12BE' class='variant'><span id='YUV422P12BE.v' class='invisible'><code>YUV422P12BE</code></span></span><span id='variant.YUV422P12LE' class='variant'><span id='YUV422P12LE.v' class='invisible'><code>YUV422P12LE</code></span></span><span id='variant.YUV422P14BE' class='variant'><span id='YUV422P14BE.v' class='invisible'><code>YUV422P14BE</code></span></span><span id='variant.YUV422P14LE' class='variant'><span id='YUV422P14LE.v' class='invisible'><code>YUV422P14LE</code></span></span><span id='variant.YUV444P12BE' class='variant'><span id='YUV444P12BE.v' class='invisible'><code>YUV444P12BE</code></span></span><span id='variant.YUV444P12LE' class='variant'><span id='YUV444P12LE.v' class='invisible'><code>YUV444P12LE</code></span></span><span id='variant.YUV444P14BE' class='variant'><span id='YUV444P14BE.v' class='invisible'><code>YUV444P14BE</code></span></span><span id='variant.YUV444P14LE' class='variant'><span id='YUV444P14LE.v' class='invisible'><code>YUV444P14LE</code></span></span><span id='variant.GBRP12BE' class='variant'><span id='GBRP12BE.v' class='invisible'><code>GBRP12BE</code></span></span><span id='variant.GBRP12LE' class='variant'><span id='GBRP12LE.v' class='invisible'><code>GBRP12LE</code></span></span><span id='variant.GBRP14BE' class='variant'><span id='GBRP14BE.v' class='invisible'><code>GBRP14BE</code></span></span><span id='variant.GBRP14LE' class='variant'><span id='GBRP14LE.v' class='invisible'><code>GBRP14LE</code></span></span><span id='variant.GBRAP' class='variant'><span id='GBRAP.v' class='invisible'><code>GBRAP</code></span></span><span id='variant.GBRAP16BE' class='variant'><span id='GBRAP16BE.v' class='invisible'><code>GBRAP16BE</code></span></span><span id='variant.GBRAP16LE' class='variant'><span id='GBRAP16LE.v' class='invisible'><code>GBRAP16LE</code></span></span><span id='variant.YUVJ411P' class='variant'><span id='YUVJ411P.v' class='invisible'><code>YUVJ411P</code></span></span><span id='variant.BAYER_BGGR8' class='variant'><span id='BAYER_BGGR8.v' class='invisible'><code>BAYER_BGGR8</code></span></span><span id='variant.BAYER_RGGB8' class='variant'><span id='BAYER_RGGB8.v' class='invisible'><code>BAYER_RGGB8</code></span></span><span id='variant.BAYER_GBRG8' class='variant'><span id='BAYER_GBRG8.v' class='invisible'><code>BAYER_GBRG8</code></span></span><span id='variant.BAYER_GRBG8' class='variant'><span id='BAYER_GRBG8.v' class='invisible'><code>BAYER_GRBG8</code></span></span><span id='variant.BAYER_BGGR16LE' class='variant'><span id='BAYER_BGGR16LE.v' class='invisible'><code>BAYER_BGGR16LE</code></span></span><span id='variant.BAYER_BGGR16BE' class='variant'><span id='BAYER_BGGR16BE.v' class='invisible'><code>BAYER_BGGR16BE</code></span></span><span id='variant.BAYER_RGGB16LE' class='variant'><span id='BAYER_RGGB16LE.v' class='invisible'><code>BAYER_RGGB16LE</code></span></span><span id='variant.BAYER_RGGB16BE' class='variant'><span id='BAYER_RGGB16BE.v' class='invisible'><code>BAYER_RGGB16BE</code></span></span><span id='variant.BAYER_GBRG16LE' class='variant'><span id='BAYER_GBRG16LE.v' class='invisible'><code>BAYER_GBRG16LE</code></span></span><span id='variant.BAYER_GBRG16BE' class='variant'><span id='BAYER_GBRG16BE.v' class='invisible'><code>BAYER_GBRG16BE</code></span></span><span id='variant.BAYER_GRBG16LE' class='variant'><span id='BAYER_GRBG16LE.v' class='invisible'><code>BAYER_GRBG16LE</code></span></span><span id='variant.BAYER_GRBG16BE' class='variant'><span id='BAYER_GRBG16BE.v' class='invisible'><code>BAYER_GRBG16BE</code></span></span><span id='variant.YUV440P10LE' class='variant'><span id='YUV440P10LE.v' class='invisible'><code>YUV440P10LE</code></span></span><span id='variant.YUV440P10BE' class='variant'><span id='YUV440P10BE.v' class='invisible'><code>YUV440P10BE</code></span></span><span id='variant.YUV440P12LE' class='variant'><span id='YUV440P12LE.v' class='invisible'><code>YUV440P12LE</code></span></span><span id='variant.YUV440P12BE' class='variant'><span id='YUV440P12BE.v' class='invisible'><code>YUV440P12BE</code></span></span><span id='variant.AYUV64LE' class='variant'><span id='AYUV64LE.v' class='invisible'><code>AYUV64LE</code></span></span><span id='variant.AYUV64BE' class='variant'><span id='AYUV64BE.v' class='invisible'><code>AYUV64BE</code></span></span><span id='variant.VIDEOTOOLBOX' class='variant'><span id='VIDEOTOOLBOX.v' class='invisible'><code>VIDEOTOOLBOX</code></span></span><span id='variant.XVMC' class='variant'><span id='XVMC.v' class='invisible'><code>XVMC</code></span></span><span id='variant.Y400A' class='variant'><span id='Y400A.v' class='invisible'><code>Y400A</code></span></span><span id='variant.GRAY8A' class='variant'><span id='GRAY8A.v' class='invisible'><code>GRAY8A</code></span></span><span id='variant.GBR24P' class='variant'><span id='GBR24P.v' class='invisible'><code>GBR24P</code></span></span><span id='variant.RGB32' class='variant'><span id='RGB32.v' class='invisible'><code>RGB32</code></span></span><span id='variant.RGB32_1' class='variant'><span id='RGB32_1.v' class='invisible'><code>RGB32_1</code></span></span><span id='variant.BGR32' class='variant'><span id='BGR32.v' class='invisible'><code>BGR32</code></span></span><span id='variant.BGR32_1' class='variant'><span id='BGR32_1.v' class='invisible'><code>BGR32_1</code></span></span><span id='variant.ZRGB32' class='variant'><span id='ZRGB32.v' class='invisible'><code>ZRGB32</code></span></span><span id='variant.ZBGR32' class='variant'><span id='ZBGR32.v' class='invisible'><code>ZBGR32</code></span></span><span id='variant.GRAY16' class='variant'><span id='GRAY16.v' class='invisible'><code>GRAY16</code></span></span><span id='variant.YA16' class='variant'><span id='YA16.v' class='invisible'><code>YA16</code></span></span><span id='variant.RGB48' class='variant'><span id='RGB48.v' class='invisible'><code>RGB48</code></span></span><span id='variant.RGB565' class='variant'><span id='RGB565.v' class='invisible'><code>RGB565</code></span></span><span id='variant.RGB555' class='variant'><span id='RGB555.v' class='invisible'><code>RGB555</code></span></span><span id='variant.RGB444' class='variant'><span id='RGB444.v' class='invisible'><code>RGB444</code></span></span><span id='variant.BGR48' class='variant'><span id='BGR48.v' class='invisible'><code>BGR48</code></span></span><span id='variant.BGR565' class='variant'><span id='BGR565.v' class='invisible'><code>BGR565</code></span></span><span id='variant.BGR555' class='variant'><span id='BGR555.v' class='invisible'><code>BGR555</code></span></span><span id='variant.BGR444' class='variant'><span id='BGR444.v' class='invisible'><code>BGR444</code></span></span><span id='variant.YUV420P9' class='variant'><span id='YUV420P9.v' class='invisible'><code>YUV420P9</code></span></span><span id='variant.YUV422P9' class='variant'><span id='YUV422P9.v' class='invisible'><code>YUV422P9</code></span></span><span id='variant.YUV444P9' class='variant'><span id='YUV444P9.v' class='invisible'><code>YUV444P9</code></span></span><span id='variant.YUV420P10' class='variant'><span id='YUV420P10.v' class='invisible'><code>YUV420P10</code></span></span><span id='variant.YUV422P10' class='variant'><span id='YUV422P10.v' class='invisible'><code>YUV422P10</code></span></span><span id='variant.YUV440P10' class='variant'><span id='YUV440P10.v' class='invisible'><code>YUV440P10</code></span></span><span id='variant.YUV444P10' class='variant'><span id='YUV444P10.v' class='invisible'><code>YUV444P10</code></span></span><span id='variant.YUV420P12' class='variant'><span id='YUV420P12.v' class='invisible'><code>YUV420P12</code></span></span><span id='variant.YUV422P12' class='variant'><span id='YUV422P12.v' class='invisible'><code>YUV422P12</code></span></span><span id='variant.YUV440P12' class='variant'><span id='YUV440P12.v' class='invisible'><code>YUV440P12</code></span></span><span id='variant.YUV444P12' class='variant'><span id='YUV444P12.v' class='invisible'><code>YUV444P12</code></span></span><span id='variant.YUV420P14' class='variant'><span id='YUV420P14.v' class='invisible'><code>YUV420P14</code></span></span><span id='variant.YUV422P14' class='variant'><span id='YUV422P14.v' class='invisible'><code>YUV422P14</code></span></span><span id='variant.YUV444P14' class='variant'><span id='YUV444P14.v' class='invisible'><code>YUV444P14</code></span></span><span id='variant.YUV420P16' class='variant'><span id='YUV420P16.v' class='invisible'><code>YUV420P16</code></span></span><span id='variant.YUV422P16' class='variant'><span id='YUV422P16.v' class='invisible'><code>YUV422P16</code></span></span><span id='variant.YUV444P16' class='variant'><span id='YUV444P16.v' class='invisible'><code>YUV444P16</code></span></span><span id='variant.GBRP9' class='variant'><span id='GBRP9.v' class='invisible'><code>GBRP9</code></span></span><span id='variant.GBRP10' class='variant'><span id='GBRP10.v' class='invisible'><code>GBRP10</code></span></span><span id='variant.GBRP12' class='variant'><span id='GBRP12.v' class='invisible'><code>GBRP12</code></span></span><span id='variant.GBRP14' class='variant'><span id='GBRP14.v' class='invisible'><code>GBRP14</code></span></span><span id='variant.GBRP16' class='variant'><span id='GBRP16.v' class='invisible'><code>GBRP16</code></span></span><span id='variant.GBRAP16' class='variant'><span id='GBRAP16.v' class='invisible'><code>GBRAP16</code></span></span><span id='variant.BAYER_BGGR16' class='variant'><span id='BAYER_BGGR16.v' class='invisible'><code>BAYER_BGGR16</code></span></span><span id='variant.BAYER_RGGB16' class='variant'><span id='BAYER_RGGB16.v' class='invisible'><code>BAYER_RGGB16</code></span></span><span id='variant.BAYER_GBRG16' class='variant'><span id='BAYER_GBRG16.v' class='invisible'><code>BAYER_GBRG16</code></span></span><span id='variant.BAYER_GRBG16' class='variant'><span id='BAYER_GRBG16.v' class='invisible'><code>BAYER_GRBG16</code></span></span><span id='variant.YUVA420P9' class='variant'><span id='YUVA420P9.v' class='invisible'><code>YUVA420P9</code></span></span><span id='variant.YUVA422P9' class='variant'><span id='YUVA422P9.v' class='invisible'><code>YUVA422P9</code></span></span><span id='variant.YUVA444P9' class='variant'><span id='YUVA444P9.v' class='invisible'><code>YUVA444P9</code></span></span><span id='variant.YUVA420P10' class='variant'><span id='YUVA420P10.v' class='invisible'><code>YUVA420P10</code></span></span><span id='variant.YUVA422P10' class='variant'><span id='YUVA422P10.v' class='invisible'><code>YUVA422P10</code></span></span><span id='variant.YUVA444P10' class='variant'><span id='YUVA444P10.v' class='invisible'><code>YUVA444P10</code></span></span><span id='variant.YUVA420P16' class='variant'><span id='YUVA420P16.v' class='invisible'><code>YUVA420P16</code></span></span><span id='variant.YUVA422P16' class='variant'><span id='YUVA422P16.v' class='invisible'><code>YUVA422P16</code></span></span><span id='variant.YUVA444P16' class='variant'><span id='YUVA444P16.v' class='invisible'><code>YUVA444P16</code></span></span><span id='variant.XYZ12' class='variant'><span id='XYZ12.v' class='invisible'><code>XYZ12</code></span></span><span id='variant.NV20' class='variant'><span id='NV20.v' class='invisible'><code>NV20</code></span></span><span id='variant.AYUV64' class='variant'><span id='AYUV64.v' class='invisible'><code>AYUV64</code></span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../../../ffmpeg/util/format/pixel/enum.Pixel.html' title='ffmpeg::util::format::pixel::Pixel'>Pixel</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-5627' class='srclink' href='../../../../src/ffmpeg/src/util/format/pixel.rs.html#3' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../../../ffmpeg/util/format/pixel/enum.Pixel.html' title='ffmpeg::util::format::pixel::Pixel'>Pixel</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-5630' class='srclink' href='../../../../src/ffmpeg/src/util/format/pixel.rs.html#3' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../../../ffmpeg/util/format/pixel/enum.Pixel.html' title='ffmpeg::util::format::pixel::Pixel'>Pixel</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='enum' href='../../../../ffmpeg/util/format/pixel/enum.Pixel.html' title='ffmpeg::util::format::pixel::Pixel'>Pixel</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-5636' class='srclink' href='../../../../src/ffmpeg/src/util/format/pixel.rs.html#3' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../../../ffmpeg/util/format/pixel/enum.Pixel.html' title='ffmpeg::util::format::pixel::Pixel'>Pixel</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-5637' class='srclink' href='../../../../src/ffmpeg/src/util/format/pixel.rs.html#3' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../../../ffmpeg/util/format/pixel/enum.Pixel.html' title='ffmpeg::util::format::pixel::Pixel'>Pixel</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../../../ffmpeg/util/format/pixel/enum.Pixel.html' title='ffmpeg::util::format::pixel::Pixel'>Pixel</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-5640' class='srclink' href='../../../../src/ffmpeg/src/util/format/pixel.rs.html#3' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html' title='core::convert::From'>From</a>&lt;<a class='enum' href='../../../../ffmpeg/ffi/enum.AVPixelFormat.html' title='ffmpeg::ffi::AVPixelFormat'>AVPixelFormat</a>&gt; for <a class='enum' href='../../../../ffmpeg/util/format/pixel/enum.Pixel.html' title='ffmpeg::util::format::pixel::Pixel'>Pixel</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-535' class='srclink' href='../../../../src/ffmpeg/src/util/format/pixel.rs.html#290-513' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class='method'><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(value: <a class='enum' href='../../../../ffmpeg/ffi/enum.AVPixelFormat.html' title='ffmpeg::ffi::AVPixelFormat'>AVPixelFormat</a>) -&gt; Self</code></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='enum' href='../../../../ffmpeg/ffi/enum.AVPixelFormat.html' title='ffmpeg::ffi::AVPixelFormat'>AVPixelFormat</a>&gt; for <a class='enum' href='../../../../ffmpeg/util/format/pixel/enum.Pixel.html' title='ffmpeg::util::format::pixel::Pixel'>Pixel</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-714' class='srclink' href='../../../../src/ffmpeg/src/util/format/pixel.rs.html#515-804' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.into' class='method'><span id='into.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html#tymethod.into' class='fnname'>into</a>(self) -&gt; <a class='enum' href='../../../../ffmpeg/ffi/enum.AVPixelFormat.html' title='ffmpeg::ffi::AVPixelFormat'>AVPixelFormat</a></code></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "ffmpeg";
+    </script>
+    <script src="../../../../jquery.js"></script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

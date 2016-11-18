@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `channel_layout` mod in crate `ffmpeg`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, channel_layout">
+
+    <title>ffmpeg::util::channel_layout - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>ffmpeg</a>::<wbr><a href='../index.html'>util</a></p><script>window.sidebarCurrent = {name: 'channel_layout', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>ffmpeg</a>::<wbr><a href='../index.html'>util</a>::<wbr><a class='mod' href=''>channel_layout</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1226' class='srclink' href='../../../src/ffmpeg/src/util/channel_layout.rs.html#1-77' title='goto source code'>[src]</a></span></h1>
+<h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.ChannelLayout.html'
+                                  title='ffmpeg::util::channel_layout::ChannelLayout'>ChannelLayout</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.BACK_CENTER.html'
+                                  title='ffmpeg::util::channel_layout::BACK_CENTER'>BACK_CENTER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.BACK_LEFT.html'
+                                  title='ffmpeg::util::channel_layout::BACK_LEFT'>BACK_LEFT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.BACK_RIGHT.html'
+                                  title='ffmpeg::util::channel_layout::BACK_RIGHT'>BACK_RIGHT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.FRONT_CENTER.html'
+                                  title='ffmpeg::util::channel_layout::FRONT_CENTER'>FRONT_CENTER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.FRONT_LEFT.html'
+                                  title='ffmpeg::util::channel_layout::FRONT_LEFT'>FRONT_LEFT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.FRONT_LEFT_OF_CENTER.html'
+                                  title='ffmpeg::util::channel_layout::FRONT_LEFT_OF_CENTER'>FRONT_LEFT_OF_CENTER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.FRONT_RIGHT.html'
+                                  title='ffmpeg::util::channel_layout::FRONT_RIGHT'>FRONT_RIGHT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.FRONT_RIGHT_OF_CENTER.html'
+                                  title='ffmpeg::util::channel_layout::FRONT_RIGHT_OF_CENTER'>FRONT_RIGHT_OF_CENTER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.HEXADECAGONAL.html'
+                                  title='ffmpeg::util::channel_layout::HEXADECAGONAL'>HEXADECAGONAL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.HEXAGONAL.html'
+                                  title='ffmpeg::util::channel_layout::HEXAGONAL'>HEXAGONAL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.LOW_FREQUENCY.html'
+                                  title='ffmpeg::util::channel_layout::LOW_FREQUENCY'>LOW_FREQUENCY</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.LOW_FREQUENCY_2.html'
+                                  title='ffmpeg::util::channel_layout::LOW_FREQUENCY_2'>LOW_FREQUENCY_2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.MONO.html'
+                                  title='ffmpeg::util::channel_layout::MONO'>MONO</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.NATIVE.html'
+                                  title='ffmpeg::util::channel_layout::NATIVE'>NATIVE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.OCTAGONAL.html'
+                                  title='ffmpeg::util::channel_layout::OCTAGONAL'>OCTAGONAL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.QUAD.html'
+                                  title='ffmpeg::util::channel_layout::QUAD'>QUAD</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.SIDE_LEFT.html'
+                                  title='ffmpeg::util::channel_layout::SIDE_LEFT'>SIDE_LEFT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.SIDE_RIGHT.html'
+                                  title='ffmpeg::util::channel_layout::SIDE_RIGHT'>SIDE_RIGHT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.STEREO.html'
+                                  title='ffmpeg::util::channel_layout::STEREO'>STEREO</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.STEREO_DOWNMIX.html'
+                                  title='ffmpeg::util::channel_layout::STEREO_DOWNMIX'>STEREO_DOWNMIX</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.STEREO_LEFT.html'
+                                  title='ffmpeg::util::channel_layout::STEREO_LEFT'>STEREO_LEFT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.STEREO_RIGHT.html'
+                                  title='ffmpeg::util::channel_layout::STEREO_RIGHT'>STEREO_RIGHT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.SURROUND.html'
+                                  title='ffmpeg::util::channel_layout::SURROUND'>SURROUND</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.SURROUND_DIRECT_LEFT.html'
+                                  title='ffmpeg::util::channel_layout::SURROUND_DIRECT_LEFT'>SURROUND_DIRECT_LEFT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.SURROUND_DIRECT_RIGHT.html'
+                                  title='ffmpeg::util::channel_layout::SURROUND_DIRECT_RIGHT'>SURROUND_DIRECT_RIGHT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.TOP_BACK_CENTER.html'
+                                  title='ffmpeg::util::channel_layout::TOP_BACK_CENTER'>TOP_BACK_CENTER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.TOP_BACK_LEFT.html'
+                                  title='ffmpeg::util::channel_layout::TOP_BACK_LEFT'>TOP_BACK_LEFT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.TOP_BACK_RIGHT.html'
+                                  title='ffmpeg::util::channel_layout::TOP_BACK_RIGHT'>TOP_BACK_RIGHT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.TOP_CENTER.html'
+                                  title='ffmpeg::util::channel_layout::TOP_CENTER'>TOP_CENTER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.TOP_FRONT_CENTER.html'
+                                  title='ffmpeg::util::channel_layout::TOP_FRONT_CENTER'>TOP_FRONT_CENTER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.TOP_FRONT_LEFT.html'
+                                  title='ffmpeg::util::channel_layout::TOP_FRONT_LEFT'>TOP_FRONT_LEFT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.TOP_FRONT_RIGHT.html'
+                                  title='ffmpeg::util::channel_layout::TOP_FRONT_RIGHT'>TOP_FRONT_RIGHT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.WIDE_LEFT.html'
+                                  title='ffmpeg::util::channel_layout::WIDE_LEFT'>WIDE_LEFT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.WIDE_RIGHT.html'
+                                  title='ffmpeg::util::channel_layout::WIDE_RIGHT'>WIDE_RIGHT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._2POINT1.html'
+                                  title='ffmpeg::util::channel_layout::_2POINT1'>_2POINT1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._2_1.html'
+                                  title='ffmpeg::util::channel_layout::_2_1'>_2_1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._2_2.html'
+                                  title='ffmpeg::util::channel_layout::_2_2'>_2_2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._3POINT1.html'
+                                  title='ffmpeg::util::channel_layout::_3POINT1'>_3POINT1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._4POINT0.html'
+                                  title='ffmpeg::util::channel_layout::_4POINT0'>_4POINT0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._4POINT1.html'
+                                  title='ffmpeg::util::channel_layout::_4POINT1'>_4POINT1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._5POINT0.html'
+                                  title='ffmpeg::util::channel_layout::_5POINT0'>_5POINT0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._5POINT0_BACK.html'
+                                  title='ffmpeg::util::channel_layout::_5POINT0_BACK'>_5POINT0_BACK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._5POINT1.html'
+                                  title='ffmpeg::util::channel_layout::_5POINT1'>_5POINT1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._5POINT1_BACK.html'
+                                  title='ffmpeg::util::channel_layout::_5POINT1_BACK'>_5POINT1_BACK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._6POINT0.html'
+                                  title='ffmpeg::util::channel_layout::_6POINT0'>_6POINT0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._6POINT0_FRONT.html'
+                                  title='ffmpeg::util::channel_layout::_6POINT0_FRONT'>_6POINT0_FRONT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._6POINT1.html'
+                                  title='ffmpeg::util::channel_layout::_6POINT1'>_6POINT1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._6POINT1_BACK.html'
+                                  title='ffmpeg::util::channel_layout::_6POINT1_BACK'>_6POINT1_BACK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._6POINT1_FRONT.html'
+                                  title='ffmpeg::util::channel_layout::_6POINT1_FRONT'>_6POINT1_FRONT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._7POINT0.html'
+                                  title='ffmpeg::util::channel_layout::_7POINT0'>_7POINT0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._7POINT0_FRONT.html'
+                                  title='ffmpeg::util::channel_layout::_7POINT0_FRONT'>_7POINT0_FRONT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._7POINT1.html'
+                                  title='ffmpeg::util::channel_layout::_7POINT1'>_7POINT1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._7POINT1_WIDE.html'
+                                  title='ffmpeg::util::channel_layout::_7POINT1_WIDE'>_7POINT1_WIDE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._7POINT1_WIDE_BACK.html'
+                                  title='ffmpeg::util::channel_layout::_7POINT1_WIDE_BACK'>_7POINT1_WIDE_BACK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "ffmpeg";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>
